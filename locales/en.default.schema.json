@@ -1267,7 +1267,7 @@
             "label": "Collage"
           },
           "info": "Posts are stacked on mobile."
-       },
+        },
         "image_height": {
           "label": "Featured image height",
           "options__1": {
@@ -2044,7 +2044,7 @@
         },
         "show_text_below": {
           "label": "Show content below image on mobile",
-          "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https:\/\/help.shopify.com\/en\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
+          "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
         }
       },
       "blocks": {
