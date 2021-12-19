@@ -3,6 +3,13 @@
     "colors": {
       "name": "Färger",
       "settings": {
+        "header_background": {
+          "label": "Background color of header"
+        },
+        "header_color": {
+          "label": "Textcolor in header",
+          "info": "Is used for text, links and icons"
+        },
         "colors_solid_button_labels": {
           "label": "Tydlig knappetikett",
           "info": "Används som förgrundsfärg på accentfärger."
@@ -54,6 +61,9 @@
         "type_header_font": {
           "label": "Typsnitt",
           "info": "Om du väljer ett annat typsnitt kan det påverka butikshastigheten. [Lär dig mer om typsnitt i system.](https://help.shopify.com/en/manual/online-store/os/store-speed/improving-speed#fonts)"
+        },
+        "header__0": {
+          "content": "Headerfärger"
         },
         "header__1": {
           "content": "Rubriker"
@@ -671,6 +681,12 @@
         "enable_sticky_header": {
           "label": "Aktivera fast rubrik",
           "info": "Rubrik visas på skärmen när kunder skrollar upp."
+        },
+        "bubble_background": {
+          "label": "Bakgrundsfärg på antal varor i kundvagnen"
+        },
+        "bubble_color": {
+          "label": "Textfärg på antal varor i kundvagnen"
         },
         "color_scheme": {
           "options__1": {

@@ -3,6 +3,13 @@
     "colors": {
       "name": "Colors",
       "settings": {
+        "header_background": {
+          "label": "Background color of header"
+        },
+        "header_color": {
+          "label": "Textcolor in header",
+          "info": "Is used for text, links and icons"
+        },
         "colors_solid_button_labels": {
           "label": "Solid button label",
           "info": "Used as foreground color on accent colors."
@@ -19,6 +26,9 @@
         },
         "gradient_accent_2": {
           "label": "Accent 2 gradient"
+        },
+        "header__0": {
+          "content": "Headerfärger"
         },
         "header__1": {
           "content": "Primary colors"
@@ -811,6 +821,12 @@
         "enable_sticky_header": {
           "label": "Enable sticky header",
           "info": "Header shows on the screen as customers scroll up."
+        },
+        "bubble_background": {
+          "label": "Bakgrundsfärg på antal varor i kundvagnen"
+        },
+        "bubble_color": {
+          "label": "Textfärg på antal varor i kundvagnen"
         }
       }
     },

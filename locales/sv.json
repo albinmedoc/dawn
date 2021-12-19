@@ -202,7 +202,8 @@
         "name": "Namn",
         "email": "E-postadress",
         "phone": "Telefonnummer",
-        "comment": "Kommentar",
+        "company": "Företag\/organisation",
+        "comment": "Meddelande",
         "send": "Skicka",
         "post_success": "Tack för att du kontaktar oss. Vi återkommer till dig så snart som möjligt.",
         "error_heading": "Justera följande:"
