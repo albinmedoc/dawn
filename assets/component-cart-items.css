@@ -101,6 +101,17 @@
   font-size: 1.4rem;
   word-break: break-all;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.product-option > dt {
+  font-weight: bold;
+}
+
+.product-option img {
+  max-height: 75px;
+  max-width: 100%;
 }
 
 .cart-item cart-remove-button {

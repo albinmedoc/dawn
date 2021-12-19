@@ -28,12 +28,23 @@
                   <dt>{{ property.first }}: </dt>
                   <dd>
                     {%- if property.last contains '/uploads/' -%}
-                      <a href="{{ property.last }}" class="link" target="_blank">
-                        {{ property.last | split: '/' | last }}
-                      </a>
+                      {% assign filename = property.last | split: '/' | last %}
+                      {%- if filename contains '.png' or filename contains '.jpg' -%}
+                        {% comment %}theme-check-disable ImgWidthAndHeight{% endcomment %}
+                        <img src="{{ property.last | image_url }}" alt="{{ property.first }}" loading="lazy">
+                        {% comment %}theme-check-enable ImgWidthAndHeight{% endcomment %}
+                      {%- else -%}
+                        <a href="{{ property.last }}" class="link" target="_blank">
+                          {{ filename }}
+                        </a>
+                      {%- endif -%}
+                    {%- elsif property.last contains 'data:image/' -%}
+                      {% comment %}theme-check-disable RemoteAsset,ImgWidthAndHeight{% endcomment %}
+                      <img src="{{ property.last }}" alt="{{ property.first }}" loading="lazy">
+                      {% comment %}theme-check-enable RemoteAsset,ImgWidthAndHeight{% endcomment %}
                     {%- else -%}
                       {{ property.last }}
-                    {%- endif -%}
+                  	{%- endif -%}
                   </dd>
                 </div>
               {%- endif -%}

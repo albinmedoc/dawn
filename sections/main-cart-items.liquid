@@ -103,9 +103,14 @@
                               <dt>{{ property.first }}: </dt>
                               <dd>
                                 {%- if property.last contains '/uploads/' -%}
-                                  <a href="{{ property.last }}" class="link" target="_blank">
-                                    {{ property.last | split: '/' | last }}
-                                  </a>
+                                  {% assign filename = property.last | split: '/' | last %}
+                                  {%- if filename contains '.png' or filename contains '.jpg' -%}
+                                    <img src="{{ property.last | image_url}}" alt="{{ property.first }}" loading="lazy" height="55" width="auto">
+                                  {%- else -%}
+                                    <a href="{{ property.last }}" class="link" target="_blank">
+                                      {{ filename }}
+                                    </a>
+                                  {%- endif -%}
                                 {%- else -%}
                                   {{ property.last }}
                                 {%- endif -%}
