@@ -253,16 +253,9 @@
 }
 
 .card__badge {
-  bottom: 1rem;
   display: flex;
   flex-wrap: wrap;
-  left: 1rem;
   position: absolute;
-}
-
-.card__badge > * {
-  margin-right: 1rem;
-  margin-top: 0.5rem;
 }
 
 .overlay-card {

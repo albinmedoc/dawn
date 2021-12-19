@@ -121,11 +121,18 @@
         </div>
       {%- endif -%}
 
-      <div class="card__badge">
+      <div class="card__badge badge--top-right">
+        {% assign productTags = product_card_product.tags | join: ', ' %}
+        {%- if productTags contains 'Snabb leverans' -%}
+        	<span class="badge badge--top-right color-{{ settings.sale_badge_color_scheme }}">Snabb leverans</span>
+        {%- endif -%}
+      </div>
+
+      <div class="card__badge badge--bottom-left">
         {%- if product_card_product.available == false -%}
-          <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
+          <span class="badge color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
         {%- elsif product_card_product.compare_at_price > product_card_product.price and product_card_product.available -%}
-          <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+          <span class="badge color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
         {%- endif -%}
       </div>
     </div>

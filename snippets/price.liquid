@@ -89,5 +89,11 @@
     <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
       {{ 'products.product.sold_out' | t }}
     </span>
+    {% assign productTags = product.tags | join: ', ' %}
+    {%- if productTags contains 'Snabb leverans' -%}
+      <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
+        Snabb leverans
+      </span>
+    {%- endif -%}
   {%- endif -%}
 </div>

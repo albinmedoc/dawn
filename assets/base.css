@@ -2331,6 +2331,24 @@ details-disclosure > details {
   border-color: rgba(var(--color-badge-border), var(--alpha-badge-border));
   color: rgb(var(--color-foreground));
   word-break: break-word;
+  margin: 0;
+}
+  
+.badge--top-left {
+  top: 1rem;
+  left: 1rem;
+}
+.badge--top-right {
+  top: 1rem;
+  right: 1rem;
+}
+.badge--bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+}
+.badge--bottom-right {
+  bottom: 1rem;
+  right: 1rem;
 }
 
 .gradient {
