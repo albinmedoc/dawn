@@ -12,6 +12,23 @@
     "settings": [
       {
         "type": "header",
+        "content": "t:settings_schema.colors.settings.header__0.content"
+      },
+      {
+        "type": "color",
+        "id": "header_background",
+        "default": "#FFFFFF",
+        "label": "t:settings_schema.colors.settings.header_background.label"
+      },
+      {
+        "type": "color",
+        "id": "header_color",
+        "default": "#000",
+        "label": "t:settings_schema.colors.settings.header_color.label",
+        "info": "t:settings_schema.colors.settings.header_color.info"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
       },
       {

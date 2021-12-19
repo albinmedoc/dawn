@@ -2,6 +2,8 @@
   "current": "Default",
   "presets": {
     "Default": {
+      "header_background":"#95c11f",
+      "header_color":"#0a0101",
       "colors_solid_button_labels": "#FFFFFF",
       "colors_accent_1": "#121212",
       "colors_accent_2": "#334FB4",
