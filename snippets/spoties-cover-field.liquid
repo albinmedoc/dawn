@@ -1,0 +1,36 @@
+{% comment %}
+    Renders the spoties cover field for a product
+
+    Accepts:
+    - product: {Object} Product Liquid object
+    - form_id: {String} Id of the product form
+    - section: {Object} 
+
+    Usage:
+    {% render 'spoties-cover-field' product: product, form_id: product_form_id, section: section %}
+{% endcomment %}
+
+<spoties-cover-image>
+    <input type="hidden">
+    <input
+        type="file"
+        id="{{ section.id }}-cover-upload"
+        accept="image/png, image/jpeg"
+    >
+    <div class="spoties__option">
+        <label for="{{ section.id }}-cover-upload">Omslagsbild</label>
+        <div>
+            <label for="{{ section.id }}-cover-upload">Välj bild</label>
+            <img loading="lazy">
+        </div>
+        <spoties-option-errors></spoties-option-errors>
+    </div>
+    <div class="spoties__cover__modal">
+        <div>
+            <div class="spoties__cropper_container">
+                <img loading="lazy">
+            </div>
+            <label role="button">Spara</label>
+        </div>
+    </div>
+</spoties-cover-image>

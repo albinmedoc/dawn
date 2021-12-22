@@ -1,0 +1,163 @@
+.spoties__fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.spoties__option {
+    font-size: 16px;
+    text-align: left;
+}
+
+.spoties__option > label {
+    display: flex !important;
+    float: none !important;
+    align-items: center;
+    position: relative;
+}
+
+.spoties__option input, .spoties__option select, .spoties__option button, .spoties__option > div > label, .spoties__cover__modal label {
+    color: #374151;
+    background-color: #fff;
+    font-size: 16px;
+    border-width: 1px;
+    border-color: #d1d5db;
+    border-radius: 6px;
+    box-shadow: rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 0%) 0 0 0 0, rgb(0 0 0 / 5%) 0 1px 2px 0;
+    width: 100%;
+    line-height: 1;
+    appearance: none;
+    display: block;
+    border-style: solid;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    min-height: 0!important;
+}
+
+spoties-option-errors > div {
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    color: #fff;
+    background-color: #c44e47;
+    border-color: #b7423b;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    opacity: 1;
+    box-sizing: border-box;
+    padding: 5px 12px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+}
+
+spoties-option-errors > div:after {
+    content: "x";
+    position: absolute;
+    right: 16px;
+    top: 4px;
+}
+
+.spoties_search_fields {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-gap: 1rem;
+}
+
+#spoties-spotify-code {
+    width: 100%;
+    display: none;
+}
+
+.search__results__container  {
+    max-height: 320px;
+    overflow-y: scroll;
+    display: none;
+}
+  
+.search__results__container > div {
+    display: grid;
+    width: 100%;
+}
+  
+.search__results__container > div > div {
+    display: grid;
+    grid-template-columns: 65px auto;
+    padding: 5px;
+    grid-gap: 10px;
+    align-items: center;
+    background-color: #e5e5e5;
+}
+  
+.search__results__container > div > div:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+  
+.search__results__container > div img {
+    width: 65px;
+}
+  
+.search__results__container > div > div > div {
+    justify-content: center;
+}
+  
+.search__results__container > div p {
+    margin: 0;
+    width: 100%;
+}
+  
+.search__results__container > div p:nth-child(1) {
+    font-size: 20px;
+}
+  
+.search__results__container > div p:nth-child(2) {
+    font-size: 12px;
+}
+  
+.search__results__container > button {
+    margin: 10px auto 0px auto;
+    cursor: pointer;
+}
+
+spoties-search-field i > img {
+    vertical-align: middle;
+}
+
+spoties-cover-image > input[type="file"] {
+    display: none;
+}
+
+spoties-cover-image > .spoties__option > div {
+    display: flex;
+    align-items: flex-start;
+}
+
+spoties-cover-image > .spoties__option > div > label{
+    width: auto;
+    margin-right: 1rem;
+}
+
+spoties-cover-image > .spoties__option img {
+    height: 50px;
+}
+
+.spoties__cover__modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+  
+.spoties__cover__modal > div {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}

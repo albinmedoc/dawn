@@ -7,19 +7,39 @@ if (!customElements.get('product-form')) {
       this.form.querySelector('[name=id]').disabled = false;
       this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
       this.cartNotification = document.querySelector('cart-notification');
+      this.loader_spinner = this.querySelector('.loading-overlay__spinner');
+      this.submitButton = this.querySelector('[type="submit"]');
+
+      this.spoties_fields = document.querySelector('spoties-fields');
+    }
+
+    showLoader() {
+      this.submitButton.setAttribute('aria-disabled', true);
+      this.submitButton.classList.add('loading');
+      this.loader_spinner.classList.remove('hidden');
+    }
+
+    hideLoader() {
+      this.submitButton.classList.remove('loading');
+      this.submitButton.removeAttribute('aria-disabled');
+      this.loader_spinner.classList.add('hidden');
     }
 
     onSubmitHandler(evt) {
       evt.preventDefault();
-      const submitButton = this.querySelector('[type="submit"]');
-      if (submitButton.classList.contains('loading')) return;
+      if (this.submitButton.classList.contains('loading')) return;
 
       this.handleErrorMessage();
       this.cartNotification.setActiveElement(document.activeElement);
 
-      submitButton.setAttribute('aria-disabled', true);
-      submitButton.classList.add('loading');
-      this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
+      this.showLoader();
+
+      const spoties_fields_valid = this.spoties_fields.validate();
+
+      if(!spoties_fields_valid) {
+        this.hideLoader();
+        return;
+      }
 
       const config = fetchConfig('javascript');
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
@@ -44,9 +64,7 @@ if (!customElements.get('product-form')) {
           console.error(e);
         })
         .finally(() => {
-          submitButton.classList.remove('loading');
-          submitButton.removeAttribute('aria-disabled');
-          this.querySelector('.loading-overlay__spinner').classList.add('hidden');
+          this.hideLoader();
         });
     }
 
@@ -59,6 +77,27 @@ if (!customElements.get('product-form')) {
       if (errorMessage) {
         this.errorMessage.textContent = errorMessage;
       }
+    }
+
+    base64toBlob(base64Data, contentType) {
+      contentType = contentType || '';
+      var sliceSize = 1024;
+      var byteCharacters = atob(base64Data);
+      var bytesLength = byteCharacters.length;
+      var slicesCount = Math.ceil(bytesLength / sliceSize);
+      var byteArrays = new Array(slicesCount);
+
+      for (var sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {
+        var begin = sliceIndex * sliceSize;
+        var end = Math.min(begin + sliceSize, bytesLength);
+
+        var bytes = new Array(end - begin);
+        for (var offset = begin, i = 0; offset < end; ++i, ++offset) {
+          bytes[i] = byteCharacters[offset].charCodeAt(0);
+        }
+        byteArrays[sliceIndex] = new Uint8Array(bytes);
+      }
+      return new Blob(byteArrays, { type: contentType });
     }
   });
 }

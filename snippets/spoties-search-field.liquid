@@ -1,0 +1,42 @@
+{% comment %}
+    Renders the spoties search field for a product
+
+    Accepts:
+    - product: {Object} Product Liquid object
+    - form_id: {String} Id of the product form
+    - section: {Object} 
+
+    Usage:
+    {% render 'spoties-search-field' product: product, form_id: product_form_id, section: section %}
+{% endcomment %}
+
+<spoties-search-field>
+    <input type="hidden" name="properties[Spotify URI]" form="{{ form_id }}">
+    <div class="spoties__option">
+        <label for="{{ section.id }}-search">Sök</label>
+        <div class="spoties_search_fields">
+            <select>
+                <option value="track" selected="">Låt</option>
+                <option value="album">Album</option>
+            </select>
+            <input
+                type="text"
+                id="{{ section.id }}-search"
+                placeholder="Sök..."
+            >
+        </div>
+        <spoties-option-errors></spoties-option-errors>
+        <p>
+            <i>
+                Powered by <img src="{{ 'spotify_logo.png' | asset_url }}" alt="Spotify logo" height="20" width="66" loading="lazy">
+                <br>
+                Hittar du inte låten eller albumet du söker? <a href="/pages/kontakta-oss">Kontakta oss</a> så hjälper vi dig.
+            </i>
+        </p>
+        <img id="spoties-spotify-code" loading="lazy" alt="Spotify code">
+        <div class="search__results__container">
+            <div></div>
+            <button>Ladda fler</button>
+        </div>
+    </div>
+</spoties-search-field>

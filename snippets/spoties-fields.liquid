@@ -1,0 +1,91 @@
+{% comment %}
+    Renders the spoties fields for a product
+
+    Accepts:
+    - product: {Object} Product Liquid object
+    - form_id: {String} Id of the product form
+    - section: {Object} 
+
+    Usage:
+    {% render 'spoties-fields' product: product, form_id: product_form_id, section: section %}
+{% endcomment %}
+
+{{ 'spoties-fields.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'spoties-fields.js' | asset_url }}" defer="defer"></script>
+
+<spoties-fields class="spoties__fields">
+    {%- for option in product.metafields.spoties.options.value -%}
+        {%- case option.type -%}
+        {%- when 'search' -%}
+            {% render 'spoties-search-field' product: product, form_id: form_id, section: section %}
+        {%- when 'cover-image' -%}
+            {% render 'spoties-cover-field' product: product, form_id: form_id, section: section %}
+        {%- when 'record-name' -%}
+            <spoties-record-name-field
+                {% if option.minlength %}
+                    minlength="{{ option.minlength }}"
+                {% endif %}
+                {% if option.maxlength %}
+                    maxlength="{{ option.maxlength }}"
+                {% endif %}
+                required
+            >
+                <div class="spoties__option">
+                    <label for="{{ section.id }}-record">Låtnamn</label>
+                    <input
+                        type="text"
+                        id="{{ section.id }}-record"
+                        name="properties[Record name]"
+                        form="{{ form_id }}"
+                        required
+                    >
+                    <spoties-option-errors></spoties-option-errors>
+                </div>
+            </spoties-record-name-field>
+        {%- when 'artist-name' -%}
+            <spoties-artist-field
+                {% if option.minlength %}
+                    minlength="{{ option.minlength }}"
+                {% endif %}
+                {% if option.maxlength %}
+                    maxlength="{{ option.maxlength }}"
+                {% endif %}
+                required
+            >
+                <div class="spoties__option">
+                    <label for="{{ section.id }}-artist">Artistnamn</label>
+                    <input
+                        type="text"
+                        id="{{ section.id }}-artist"
+                        name="properties[Artist name]"
+                        form="{{ form_id }}"
+                    >
+                    <spoties-option-errors></spoties-option-errors>
+                </div>
+            </spoties-artist-field>
+        {%- when 'text' -%}
+            <spoties-text-field
+                {% if option.minlength %}
+                    minlength="{{ option.minlength }}"
+                {% endif %}
+                {% if option.maxlength %}
+                    maxlength="{{ option.maxlength }}"
+                {% endif %}
+                {% if option.required %}
+                    required
+                {% endif %}
+            >
+                <div class="spoties__option">
+                    <label for="{{ section.id }}-{{ option.id }}">{{ option.label }}</label>
+                    <input
+                        type="text"
+                        id="{{ section.id }}-{{ option.id }}"
+                        name="properties[{{ option.name }}]"
+                        form="{{ form_id }}"
+                    >
+                    <spoties-option-errors></spoties-option-errors>
+                </div>
+            </spoties-text-field>
+        {%- endcase -%}
+    {%- endfor -%}
+</spoties-fields>

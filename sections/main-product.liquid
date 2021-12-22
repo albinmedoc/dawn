@@ -6,9 +6,11 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'cropper.min.css' | asset_url | stylesheet_tag }}
 
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 
+<script src="{{ 'cropper.min.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -289,6 +291,8 @@
               </details>
             </share-button>
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+          {%- when 'spoties_fields' -%}
+            {% render 'spoties-fields' product: product, form_id: product_form_id, section: section %}
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
@@ -626,6 +630,11 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "spoties_fields",
+      "name": "Spoties fields",
+      "limit": 1
     },
     {
       "type": "text",
