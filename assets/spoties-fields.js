@@ -186,9 +186,9 @@ class SpotiesCoverImage extends HTMLElement {
         this.cover_upload_field = this.querySelector('input[type="file"]');
         this.cover_image_elem = this.querySelector('.spoties__option img');
 
-        this.modal = this.querySelector('.spoties__cover__modal');
+        this.modal = this.querySelector('#SpotiesModal-Edit');
         this.modal_image = this.modal.querySelector('img');
-        this.modal_save = this.modal.querySelector('label');
+        this.modal_save = this.modal.querySelector('button');
 
         this.errors = this.querySelector('spoties-option-errors');
 
@@ -220,10 +220,11 @@ class SpotiesCoverImage extends HTMLElement {
     }
 
     uploadFile(file) {
-        toBase64(file).then((image) => {
-            this.modal_image.src = image;
-            this.modal.style.display = "block";
-            this.cropper = new Cropper(this.modal_image, {
+        toBase64(file).then((image_data) => {
+            const image = this.modal.querySelector('img');
+            image.src = image_data;
+            this.modal.show(this.cover_upload_field);
+            this.cropper = new Cropper(image, {
                 aspectRatio: 1,
                 viewMode: 1,
             });
@@ -238,13 +239,14 @@ class SpotiesCoverImage extends HTMLElement {
             .toDataURL('image/jpeg');
         this.cropper.destroy();
         this.setCoverImage(image);
-        this.modal.style.display = "none";
+        this.modal.hide();
     }
 
     setCoverImage(image) {
         this.cover_data = image;
         this.cover_image_elem.src = image;
         this.cover_image_elem.style.display = "block";
+        this.querySelector('#SpotiesModal-Preview img').src = image;
     }
 }
 

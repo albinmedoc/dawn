@@ -465,7 +465,7 @@ class ModalOpener extends HTMLElement {
   constructor() {
     super();
 
-    const button = this.querySelector('button');
+    const button = this.querySelector('button') ? this.querySelector('button') : this.querySelector('[role="button"]');
 
     if (!button) return;
     button.addEventListener('click', () => {

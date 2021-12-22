@@ -11,7 +11,6 @@
 {% endcomment %}
 
 <spoties-cover-field>
-    <input type="hidden">
     <input
         type="file"
         id="{{ section.id }}-cover-upload"
@@ -21,16 +20,26 @@
         <label for="{{ section.id }}-cover-upload">Omslagsbild</label>
         <div>
             <label for="{{ section.id }}-cover-upload">Välj bild</label>
-            <img loading="lazy">
+            <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#SpotiesModal-Preview">
+                <img loading="lazy" role="button" aria-haspopup="dialog">
+            </modal-opener>
         </div>
         <spoties-option-errors></spoties-option-errors>
     </div>
-    <div class="spoties__cover__modal">
-        <div>
-            <div class="spoties__cropper_container">
+    <modal-dialog id="SpotiesModal-Edit" class="product-popup-modal">
+        <div role="dialog" aria-label="Redigering av omslagsbild" aria-modal="true" class="product-popup-modal__content" tabindex="-1">
+            <button id="ModalClose-SpotiesEdit" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-checkmark' %}</button>
+            <div>
                 <img loading="lazy">
             </div>
-            <label role="button">Spara</label>
         </div>
-    </div>
+    </modal-dialog>
+    <modal-dialog id="SpotiesModal-Preview" class="product-popup-modal">
+        <div role="dialog" aria-label="Förhandsvisning av omslagsbild" aria-modal="true" class="product-popup-modal__content" tabindex="-1">
+            <button id="ModalClose-SpotiesPreview" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+            <div>
+                <img loading="lazy">
+            </div>
+        </div>
+    </modal-dialog>
 </spoties-cover-field>
