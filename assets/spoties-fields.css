@@ -122,21 +122,21 @@ spoties-search-field i > img {
     vertical-align: middle;
 }
 
-spoties-cover-image > input[type="file"] {
+spoties-cover-field > input[type="file"] {
     display: none;
 }
 
-spoties-cover-image > .spoties__option > div {
+spoties-cover-field > .spoties__option > div {
     display: flex;
     align-items: flex-start;
 }
 
-spoties-cover-image > .spoties__option > div > label{
+spoties-cover-field > .spoties__option > div > label{
     width: auto;
     margin-right: 1rem;
 }
 
-spoties-cover-image > .spoties__option img {
+spoties-cover-field > .spoties__option img {
     height: 50px;
 }
 

@@ -30,18 +30,14 @@
                     {%- if property.last contains '/uploads/' -%}
                       {% assign filename = property.last | split: '/' | last %}
                       {%- if filename contains '.png' or filename contains '.jpg' -%}
-                        {% comment %}theme-check-disable ImgWidthAndHeight{% endcomment %}
-                        <img src="{{ property.last | image_url }}" alt="{{ property.first }}" loading="lazy">
-                        {% comment %}theme-check-enable ImgWidthAndHeight{% endcomment %}
+                        {% comment %}theme-check-disable RemoteAsset{% endcomment %}
+                        <img src="{{ property.last }}" alt="{{ property.first }}" loading="lazy" height="55" width="auto">
+                        {% comment %}theme-check-enable RemoteAsset{% endcomment %}
                       {%- else -%}
                         <a href="{{ property.last }}" class="link" target="_blank">
                           {{ filename }}
                         </a>
                       {%- endif -%}
-                    {%- elsif property.last contains 'data:image/' -%}
-                      {% comment %}theme-check-disable RemoteAsset,ImgWidthAndHeight{% endcomment %}
-                      <img src="{{ property.last }}" alt="{{ property.first }}" loading="lazy">
-                      {% comment %}theme-check-enable RemoteAsset,ImgWidthAndHeight{% endcomment %}
                     {%- else -%}
                       {{ property.last }}
                   	{%- endif -%}

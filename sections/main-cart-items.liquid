@@ -105,7 +105,9 @@
                                 {%- if property.last contains '/uploads/' -%}
                                   {% assign filename = property.last | split: '/' | last %}
                                   {%- if filename contains '.png' or filename contains '.jpg' -%}
-                                    <img src="{{ property.last | image_url}}" alt="{{ property.first }}" loading="lazy" height="55" width="auto">
+                                    {% comment %}theme-check-disable RemoteAsset{% endcomment %}
+                                    <img src="{{ property.last }}" alt="{{ property.first }}" loading="lazy" height="55" width="auto">
+                                    {% comment %}theme-check-enable RemoteAsset{% endcomment %}
                                   {%- else -%}
                                     <a href="{{ property.last }}" class="link" target="_blank">
                                       {{ filename }}

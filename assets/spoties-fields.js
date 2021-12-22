@@ -18,19 +18,41 @@ const imgUrlToBase64 = (url) =>
         xhr.send();
     });
 
+const base64toBlob = (base64Data, contentType) => {
+    contentType = contentType || '';
+    var sliceSize = 1024;
+    var byteCharacters = atob(base64Data);
+    var bytesLength = byteCharacters.length;
+    var slicesCount = Math.ceil(bytesLength / sliceSize);
+    var byteArrays = new Array(slicesCount);
+
+    for (var sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {
+        var begin = sliceIndex * sliceSize;
+        var end = Math.min(begin + sliceSize, bytesLength);
+
+        var bytes = new Array(end - begin);
+        for (var offset = begin, i = 0; offset < end; ++i, ++offset) {
+            bytes[i] = byteCharacters[offset].charCodeAt(0);
+        }
+        byteArrays[sliceIndex] = new Uint8Array(bytes);
+    }
+    return new Blob(byteArrays, { type: contentType });
+}
+
 class SpotiesSearch extends HTMLElement {
     constructor() {
         super();
 
         this.search_field = this.querySelector('input[type="text"]');
         this.search_type_field = this.querySelector('select');
-        this.spotify_uri_field = this.querySelector('input[type="hidden"]');
         this.search_results_container = this.querySelector('.search__results__container');
         this.search_results = this.search_results_container.querySelector('div');
         this.load_more_btn = this.search_results_container.querySelector('button');
-        this.spotify_code = this.querySelector('#spoties-spotify-code');
+        this.spotify_code_elem = this.querySelector('#spoties-spotify-code');
 
         this.errors = this.querySelector('spoties-option-errors');
+
+        this.spotify_uri = null;
 
         this.timeout = null;
         this.loading = false;
@@ -45,11 +67,15 @@ class SpotiesSearch extends HTMLElement {
         this.load_more_btn.addEventListener('click', () => this.onLoadMore());
     }
 
+    get spotify_code() {
+        return base64toBlob(this.spotify_code_elem.src.split(',')[1], 'images/png');
+    }
+
     validate() {
         this.errors.clear();
         let valid = true;
         if (this.hasAttribute('required')) {
-            valid = this.spotify_uri_field.value !== '';
+            valid = this.spotify_uri !== '';
             if (!valid) {
                 this.errors.add('Var vänlig och välj en låt')
             }
@@ -121,8 +147,8 @@ class SpotiesSearch extends HTMLElement {
                 const code_url = `https://scannables.scdn.co/uri/plain/png/ffffff/black/1080/${uri}`;
                 imgUrlToBase64(code_url)
                     .then((code_img) => {
-                        this.spotify_code.src = code_img;
-                        this.spotify_uri_field.value = uri;
+                        this.spotify_code_elem.src = code_img;
+                        this.spotify_uri = uri;
                     })
                     .finally(() => {
                         this.search_results_container.style.display = "none";
@@ -157,9 +183,8 @@ class SpotiesCoverImage extends HTMLElement {
         super();
 
         this.spoties_fields = this.closest('spoties-fields');
-        this.cover_data_field = this.querySelector('input[type="hidden"]');
         this.cover_upload_field = this.querySelector('input[type="file"]');
-        this.cover_image = this.querySelector('.spoties__option img');
+        this.cover_image_elem = this.querySelector('.spoties__option img');
 
         this.modal = this.querySelector('.spoties__cover__modal');
         this.modal_image = this.modal.querySelector('img');
@@ -167,6 +192,7 @@ class SpotiesCoverImage extends HTMLElement {
 
         this.errors = this.querySelector('spoties-option-errors');
 
+        this.cover_data = null;
         this.cropper = null;
 
         this.spoties_fields.addEventListener('spotiesSelected', (event) => {
@@ -180,9 +206,13 @@ class SpotiesCoverImage extends HTMLElement {
         this.modal_save.addEventListener('click', () => this.onSave());
     }
 
+    get cover_image() {
+        return base64toBlob(this.cover_data.split(',')[1], 'images/png');
+    }
+
     validate() {
         this.errors.clear();
-        const valid = this.cover_data_field.value !== '';
+        const valid = this.cover_data !== '';
         if (!valid) {
             this.errors.add('Var vänlig och ange en omslagsbild')
         }
@@ -212,14 +242,14 @@ class SpotiesCoverImage extends HTMLElement {
     }
 
     setCoverImage(image) {
-        this.cover_data_field.value = image;
-        this.cover_image.src = image;
-        this.cover_image.style.display = "block";
+        this.cover_data = image;
+        this.cover_image_elem.src = image;
+        this.cover_image_elem.style.display = "block";
     }
 }
 
-if (!customElements.get('spoties-cover-image')) {
-    customElements.define('spoties-cover-image', SpotiesCoverImage);
+if (!customElements.get('spoties-cover-field')) {
+    customElements.define('spoties-cover-field', SpotiesCoverImage);
 }
 
 class SpotiesTextField extends HTMLElement {
@@ -305,10 +335,11 @@ class SpotiesFields extends HTMLElement {
     constructor() {
         super();
 
-        const search_field = this.querySelector('spoties-search-field');
+        this.search_field = this.querySelector('spoties-search-field');
+        this.cover_field = this.querySelector('spoties-cover-field');
 
-        if (search_field) {
-            search_field.addEventListener('resClick', (event) => {
+        if (this.search_field) {
+            this.search_field.addEventListener('resClick', (event) => {
                 this.dispatchEvent(new CustomEvent('spotiesSelected', { detail: event.detail }));
             });
         }
@@ -320,6 +351,16 @@ class SpotiesFields extends HTMLElement {
             results.push(field.validate());
         });
         return results.every(Boolean);;
+    }
+
+    addToFormData(formData) {
+        if(this.search_field) {
+            formData.append('properties[_Spotify URI]', this.search_field.spotify_uri);
+            formData.append('properties[Spotify Code]', this.search_field.spotify_code, 'spotify_code.png');
+        }
+        if(this.cover_field) {
+            formData.append('properties[Cover Image]', this.cover_field.cover_image, 'cover_image.png');
+        }
     }
 }
 
