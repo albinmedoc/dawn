@@ -25,32 +25,20 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "background-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
         "settings": {
         }
       },
       "header": {
         "type": "header",
         "settings": {
-          "logo_width": 100,
+          "logo": "shopify:\/\/shop_images\/Logo.png",
+          "logo_width": 150,
           "logo_position": "middle-left",
           "menu": "main-menu",
-          "show_line_separator": true,
+          "show_line_separator": false,
           "enable_sticky_header": true,
-          "cart_count_bubble_background": "#000",
-          "cart_count_bubble_color": "#FFF"
+          "cart_count_bubble_background": "#000000",
+          "cart_count_bubble_color": "#ffffff"
         }
       },
       "floating-header": {
@@ -64,7 +52,7 @@
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Snabblänkar Quick links",
+              "heading": "Snabblänkar",
               "menu": "footer"
             }
           }
