@@ -4,9 +4,60 @@
       "type": "main-page",
       "settings": {
       }
+    },
+    "1640274252aeb39489": {
+      "type": "multicolumn",
+      "blocks": {
+        "1640274252fdbedbaf-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/002-truck.png",
+            "title": "Fri frakt",
+            "text": "<p>Hos oss har du alltid fri frakt, oavsett vad du köper.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1640274252fdbedbaf-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/001-cashback.png",
+            "title": "Reklamation",
+            "text": "<p>Skulle en produkt av någon anledning vara sönder eller ha ett fel på något sätt så kompenserar vi dig.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1640274252fdbedbaf-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/003-envelope.png",
+            "title": "Kontakt",
+            "text": "<p>Har du någon fråga eller speciella önskemål. Vi strävar att besvara ditt mail inom 24 timmar.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1640274252fdbedbaf-0",
+        "1640274252fdbedbaf-1",
+        "1640274252fdbedbaf-2"
+      ],
+      "settings": {
+        "title": "Vad kan vi hjälpa dig med?",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1640274252aeb39489"
   ]
 }
