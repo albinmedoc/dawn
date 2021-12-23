@@ -11,6 +11,7 @@
         "1640264568e4c65daf-0": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/002-truck.png",
             "title": "Column",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
