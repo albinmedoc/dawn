@@ -1,106 +1,158 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "settings": {
-        "desktop_content_position": "middle-center"
-      },
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_label_2": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ]
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading"
-        },
-        "text": {
-          "type": "text"
-        },
-        "button": {
-          "type": "button"
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ]
-    },
     "featured_products": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "collection": "all",
-        "image_ratio": "square"
+        "title": "Produkter med snabbare leverans",
+        "collection": "snabb-leverans",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
       }
     },
-    "collage": {
-      "type": "collage",
+    "1640253729e53f5137": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Populära produkter",
+        "collection": "populara-produkter",
+        "products_to_show": 4,
+        "show_view_all": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "1640253781f9ef190e": {
+      "type": "image-with-text",
       "blocks": {
-        "video": {
-          "type": "video"
+        "16402537819a04255d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hjärtformad nyckelring",
+            "heading_size": "h1"
+          }
         },
-        "product": {
-          "type": "product"
+        "16402537819a04255d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kanske vill du ge bort en personlig nyckelring till nära och kära. Fyll i deras favoritlåt eller en låt som kopplar till ett speciellt minne. Som pricken över i:et kan även ett personligt meddelande graveras.<\/p>",
+            "text_style": "subtitle"
+          }
         },
-        "collection": {
-          "type": "collection"
+        "16402537819a04255d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Köp nu",
+            "button_link": "shopify:\/\/products\/nyckelring-hjartformad"
+          }
         }
       },
       "block_order": [
-        "video",
-        "product",
-        "collection"
-      ]
+        "16402537819a04255d-0",
+        "16402537819a04255d-1",
+        "16402537819a04255d-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hbcf825ada43141489d1e5db4f6b79e2dM.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left"
+      }
     },
-    "video": {
-      "type": "video"
-    },
-    "multi_column": {
-      "type": "multicolumn",
+    "16402537844360004c": {
+      "type": "image-with-text",
       "blocks": {
-        "column1": {
-          "type": "column"
+        "1640253784d782ef7d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Personlig sångplatta",
+            "heading_size": "h1"
+          }
         },
-        "column2": {
-          "type": "column"
+        "1640253784d782ef7d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Föreviga ett minne i form av en tavla. Välj din favorit bild och skriv några fina ord. Tavlan görs helt personlig och får en spotify-prägel.<br\/><br\/>Det är din kreativitet som sätter gränserna för hur tavlan ska se ut.<br\/><\/p><p>Tavlan kan lika gärna ges bort till en partner, kompis eller familjemedlem.<\/p>",
+            "text_style": "subtitle"
+          }
         },
-        "column3": {
-          "type": "column"
+        "1640253784d782ef7d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Köp nu",
+            "button_link": "shopify:\/\/products\/spotify-song-cover"
+          }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ]
+        "1640253784d782ef7d-0",
+        "1640253784d782ef7d-1",
+        "1640253784d782ef7d-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hb111d9cc4c2647839677ad0ecb6815d4x.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left"
+      }
+    },
+    "16402542534bf8efbc": {
+      "type": "newsletter",
+      "blocks": {
+        "16402542533f19373d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Prenumerera på vårt nyhetsbrev"
+          }
+        },
+        "16402542533f19373d-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Få de senaste nyheterna och erbjudandena direkt till din mail!<\/p>"
+          }
+        },
+        "16402542533f19373d-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "16402542533f19373d-0",
+        "16402542533f19373d-1",
+        "16402542533f19373d-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
     "featured_products",
-    "collage",
-    "video",
-    "multi_column"
+    "1640253729e53f5137",
+    "1640253781f9ef190e",
+    "16402537844360004c",
+    "16402542534bf8efbc"
   ]
 }
