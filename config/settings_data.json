@@ -13,6 +13,15 @@
     "heading_scale": 125,
     "type_body_font": "quicksand_n5",
     "body_scale": 100,
+    "sale_badge_color_scheme": "accent-1",
+    "page_width": "1200",
+    "social_facebook_link": "https:\/\/www.facebook.com\/spoties",
+    "social_instagram_link": "https:\/\/www.instagram.com\/spoties.se\/",
+    "favicon": "shopify:\/\/shop_images\/Logo_2_favicon.png",
+    "currency_code_enabled": false,
+    "checkout_logo_image": "shopify:\/\/shop_images\/Logo_2b_e835042c-91f1-41e4-92b1-5629452d4a0d.png",
+    "checkout_accent_color": "#95c11f",
+    "checkout_button_color": "#95c11f",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
