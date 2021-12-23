@@ -3,56 +3,67 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text_style": "uppercase",
-            "text": "{{ product.vendor }}"
-          }
-        },
         "title": {
-          "type": "title"
-        },
-        "caption": {
-          "type": "text",
+          "type": "title",
           "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
           }
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {
+          }
         },
         "variant_picker": {
-          "type": "variant_picker"
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
         },
-        "quantity_selector": {
-          "type": "quantity_selector"
+        "6ac408ff-f3d0-43d3-83fd-801760c32616": {
+          "type": "spoties_fields",
+          "settings": {
+          }
         },
         "buy_buttons": {
-          "type": "buy_buttons"
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
         },
         "description": {
-          "type": "description"
-        },
-        "share": {
-          "type": "share"
+          "type": "description",
+          "settings": {
+          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
-        "subtitle",
         "price",
         "variant_picker",
-        "quantity_selector",
+        "6ac408ff-f3d0-43d3-83fd-801760c32616",
         "buy_buttons",
-        "description",
-        "share"
-      ]
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "gallery_layout": "thumbnail",
+        "media_size": "large",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
     },
     "product-recommendations": {
-      "type": "product-recommendations"
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Du gillar kanske också",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": false,
+        "show_vendor": false,
+        "show_rating": false
+      }
     }
   },
   "order": [
