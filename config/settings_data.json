@@ -45,13 +45,13 @@
         "type": "header",
         "settings": {
           "logo": "shopify:\/\/shop_images\/Logo.png",
-          "logo_width": 100,
+          "logo_width": 150,
           "logo_position": "middle-left",
           "menu": "main-menu",
-          "show_line_separator": true,
+          "show_line_separator": false,
           "enable_sticky_header": true,
-          "cart_count_bubble_background": "#000",
-          "cart_count_bubble_color": "#FFF"
+          "cart_count_bubble_background": "#000000",
+          "cart_count_bubble_color": "#ffffff"
         }
       },
       "floating-header": {
