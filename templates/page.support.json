@@ -54,10 +54,17 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "1640470502e1378638": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Kontakta oss"
+      }
     }
   },
   "order": [
     "main",
-    "1640274252aeb39489"
+    "1640274252aeb39489",
+    "1640470502e1378638"
   ]
 }
