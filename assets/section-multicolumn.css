@@ -34,12 +34,20 @@
   text-decoration: none;
 }
 
+.multicolumn-card__image-wrapper--sixth-width {
+  width: calc(100%/6);
+}
+
+.multicolumn-card__image-wrapper--fifth-width {
+  width: 20%;
+}
+
 .multicolumn-card__image-wrapper--fourth-width {
   width: 25%;
 }
 
 .multicolumn-card__image-wrapper--third-width {
-  width: 33%;
+  width: calc(100%/3);
 }
 
 .multicolumn-card__image-wrapper--half-width {
