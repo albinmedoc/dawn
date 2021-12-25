@@ -1811,6 +1811,9 @@
         "title": {
           "label": "Heading"
         },
+        "description": {
+          "label": "Description"
+        },
         "image_width": {
           "label": "Image width",
           "options__1": {

@@ -1693,6 +1693,9 @@
         "title": {
           "label": "Rubrik"
         },
+        "description": {
+          "label": "Beskrivning"
+        },
         "image_width": {
           "label": "Bildbredd",
           "options__1": {
