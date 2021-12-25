@@ -14,6 +14,7 @@
             "image": "shopify:\/\/shop_images\/002-truck.png",
             "title": "Fri frakt",
             "text": "<p>Hos oss har du alltid fri frakt, oavsett vad du köper.<\/p>",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -24,6 +25,7 @@
             "image": "shopify:\/\/shop_images\/001-cashback.png",
             "title": "Reklamation",
             "text": "<p>Skulle en produkt av någon anledning vara sönder eller ha ett fel på något sätt så kompenserar vi dig.<\/p>",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -34,6 +36,7 @@
             "image": "shopify:\/\/shop_images\/003-envelope.png",
             "title": "Kontakt",
             "text": "<p>Har du någon fråga eller speciella önskemål. Vi strävar att besvara ditt mail inom 24 timmar.<\/p>",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -64,6 +67,7 @@
             "image": "shopify:\/\/shop_images\/003-shopping-cart_f0040b73-204f-496f-9a61-49e47c5eb75e.png",
             "title": "Order & beställning",
             "text": "",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -74,6 +78,7 @@
             "image": "shopify:\/\/shop_images\/004-credit-card.png",
             "title": "Betalning",
             "text": "",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -84,6 +89,7 @@
             "image": "shopify:\/\/shop_images\/002-van.png",
             "title": "Leverans & frakt",
             "text": "",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -94,6 +100,7 @@
             "image": "shopify:\/\/shop_images\/005-box.png",
             "title": "Retur & reklamation",
             "text": "",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -104,6 +111,7 @@
             "image": "shopify:\/\/shop_images\/001-price-tag.png",
             "title": "Produktfrågor",
             "text": "",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -114,6 +122,7 @@
             "image": "shopify:\/\/shop_images\/006-speech-bubble.png",
             "title": "Övriga frågor",
             "text": "",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -135,7 +144,7 @@
         "background_style": "secondary",
         "button_label": "",
         "button_link": "",
-        "swipe_on_mobile": true
+        "swipe_on_mobile": false
       }
     },
     "1640470502e1378638": {
