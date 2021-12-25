@@ -14,6 +14,7 @@
             "image": "shopify:\/\/shop_images\/002-truck.png",
             "title": "Fri frakt",
             "text": "<p>Hos oss har du alltid fri frakt, oavsett vad du köper.<\/p>",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -24,6 +25,7 @@
             "image": "shopify:\/\/shop_images\/001-cashback.png",
             "title": "Reklamation",
             "text": "<p>Skulle en produkt av någon anledning vara sönder eller ha ett fel på något sätt så kompenserar vi dig.<\/p>",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -34,6 +36,7 @@
             "image": "shopify:\/\/shop_images\/003-envelope.png",
             "title": "Kontakt",
             "text": "<p>Har du någon fråga eller speciella önskemål. Vi strävar att besvara ditt mail inom 24 timmar.<\/p>",
+            "columnlink": "",
             "link_label": "",
             "link": ""
           }
@@ -55,6 +58,95 @@
         "swipe_on_mobile": false
       }
     },
+    "16404711237b44be75": {
+      "type": "multicolumn",
+      "blocks": {
+        "1640471123a1d5ba59-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/003-shopping-cart_f0040b73-204f-496f-9a61-49e47c5eb75e.png",
+            "title": "Order & beställning",
+            "text": "",
+            "columnlink": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1640471123a1d5ba59-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/004-credit-card.png",
+            "title": "Betalning",
+            "text": "",
+            "columnlink": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1640471123a1d5ba59-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/002-van.png",
+            "title": "Leverans & frakt",
+            "text": "",
+            "columnlink": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "e26b8a0d-c178-488d-bab4-5c0d3f092f1b": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/005-box.png",
+            "title": "Retur & reklamation",
+            "text": "",
+            "columnlink": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "5ced05bb-05c3-4597-9407-dd1f787eb893": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/001-price-tag.png",
+            "title": "Produktfrågor",
+            "text": "",
+            "columnlink": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "c12257de-40ab-4761-aee2-cd48678da5bd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/006-speech-bubble.png",
+            "title": "Övriga frågor",
+            "text": "",
+            "columnlink": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1640471123a1d5ba59-0",
+        "1640471123a1d5ba59-1",
+        "1640471123a1d5ba59-2",
+        "e26b8a0d-c178-488d-bab4-5c0d3f092f1b",
+        "5ced05bb-05c3-4597-9407-dd1f787eb893",
+        "c12257de-40ab-4761-aee2-cd48678da5bd"
+      ],
+      "settings": {
+        "title": "Frågor och svar",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_style": "secondary",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false
+      }
+    },
     "1640470502e1378638": {
       "type": "contact-form",
       "settings": {
@@ -65,6 +157,7 @@
   "order": [
     "main",
     "1640274252aeb39489",
+    "16404711237b44be75",
     "1640470502e1378638"
   ]
 }
