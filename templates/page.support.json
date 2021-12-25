@@ -49,6 +49,7 @@
       ],
       "settings": {
         "title": "Vad kan vi hjälpa dig med?",
+        "description": "<p>Multicolumn description<\/p>",
         "image_width": "third",
         "image_ratio": "adapt",
         "column_alignment": "center",
@@ -138,6 +139,7 @@
       ],
       "settings": {
         "title": "Frågor och svar",
+        "description": "<p>Genom knapparna nedan hittar du svar på alla de vanligaste frågorna vi tar emot. Ta gärna en titt här innan du kontaktar oss för att snabbt hitta en lösning på dina funderingar.<\/p>",
         "image_width": "third",
         "image_ratio": "adapt",
         "column_alignment": "center",
