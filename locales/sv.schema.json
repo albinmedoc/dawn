@@ -1699,12 +1699,15 @@
         "image_width": {
           "label": "Bildbredd",
           "options__1": {
-            "label": "En tredjedels bredd av kolumn"
+            "label": "En fjärdedels bredd av kolumn"
           },
           "options__2": {
-            "label": "Halva kolumnens bredd"
+            "label": "En tredjedels bredd av kolumn"
           },
           "options__3": {
+            "label": "Halva kolumnens bredd"
+          },
+          "options__4": {
             "label": "Hela kolumnens bredd"
           }
         },

@@ -1817,12 +1817,15 @@
         "image_width": {
           "label": "Image width",
           "options__1": {
-            "label": "One-third width of column"
+            "label": "One-fourth width of column"
           },
           "options__2": {
-            "label": "Half width of column"
+            "label": "One-third width of column"
           },
           "options__3": {
+            "label": "Half width of column"
+          },
+          "options__4": {
             "label": "Full width of column"
           }
         },
