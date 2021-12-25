@@ -27,7 +27,11 @@
         -%}
         {%- for block in section.blocks -%}
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}" {{ block.shopify_attributes }}>
-            <div class="multicolumn-card">
+            {% if block.settings.columnlink != blank %}
+              <a class="multicolumn-card multicolumn-card-link" href="{{ block.settings.columnlink }}">
+            {% else %}
+              <div class="multicolumn-card">
+            {% endif %}
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
@@ -66,7 +70,11 @@
                   <a class="link animate-arrow" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}<span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span></a>
                 {%- endif -%}
               </div>
-            </div>
+            {% if block.settings.columnlink != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
           </li>
         {%- endfor -%}
       </ul>
@@ -225,6 +233,11 @@
           "id": "text",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
           "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+        },
+        {
+          "type": "url",
+          "id": "columnlink",
+          "label": "t:sections.multicolumn.blocks.column.settings.columnlink.label"
         },
         {
           "type": "text",

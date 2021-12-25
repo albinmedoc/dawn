@@ -28,6 +28,12 @@
   }
 }
 
+.multicolumn-card-link {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .multicolumn-card__image-wrapper--third-width {
   width: 33%;
 }

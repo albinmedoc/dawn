@@ -1882,6 +1882,9 @@
             "text": {
               "label": "Description"
             },
+            "columnlink": {
+              "label": "Column link"
+            },
             "link_label": {
               "label": "Link label"
             },
