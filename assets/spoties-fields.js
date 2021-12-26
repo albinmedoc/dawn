@@ -149,7 +149,7 @@ class SpotiesSearch extends HTMLElement {
                     .then((code_img) => {
                         this.spotify_code_elem.src = code_img;
                         this.spotify_uri = uri;
-                        this.spotify_uri.style.display = "block";
+                        this.spotify_code_elem.style.display = "block";
                     })
                     .finally(() => {
                         this.search_results_container.style.display = "none";
