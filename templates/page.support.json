@@ -119,6 +119,7 @@
         },
         "c12257de-40ab-4761-aee2-cd48678da5bd": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/006-speech-bubble.png",
             "title": "Övriga frågor",
