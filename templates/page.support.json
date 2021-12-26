@@ -152,42 +152,8 @@
     "1640470502e1378638": {
       "type": "contact-form",
       "settings": {
-        "heading": "Kontakta oss"
-      }
-    },
-    "164047354971b24a5d": {
-      "type": "rich-text",
-      "blocks": {
-        "1640473548560ab992-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "1640473548560ab992-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        },
-        "1640473548560ab992-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "1640473548560ab992-0",
-        "1640473548560ab992-1",
-        "1640473548560ab992-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
+        "heading": "Kontakta oss",
+        "description": "<p>Hitta du inte ditt svar är du varm välkommen att kontakta oss. Vi strävar att återkoppla inom 24 timmar.<\/p>"
       }
     }
   },
@@ -195,7 +161,6 @@
     "main",
     "1640274252aeb39489",
     "16404711237b44be75",
-    "1640470502e1378638",
-    "164047354971b24a5d"
+    "1640470502e1378638"
   ]
 }
