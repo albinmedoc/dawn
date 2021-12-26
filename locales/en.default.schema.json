@@ -469,6 +469,14 @@
       "name": "Contact Form",
       "presets": {
         "name": "Contact form"
+      },
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "description": {
+          "label": "Description"
+        }
       }
     },
     "custom-liquid": {

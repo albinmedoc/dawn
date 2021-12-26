@@ -2,6 +2,7 @@
 
 <div class="contact page-width page-width--narrow spaced-section">
   <h2 class="title">{{ section.settings.heading | escape }}</h2>
+  <p>{{ section.settings.description }}</p>
   {%- form 'contact', id: 'ContactForm' -%}
     {%- if form.posted_successfully? -%}
       <div class="form-status form-status-list form__message" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</div>
@@ -78,7 +79,12 @@
       "type": "text",
       "id": "heading",
       "default": "Contact form",
-      "label": "Heading"
+      "label": "t:sections.contact-form.settings.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.contact-form.settings.description.label"
     }
   ],
   "presets": [

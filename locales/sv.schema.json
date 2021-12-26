@@ -458,6 +458,14 @@
       "name": "Kontaktformulär",
       "presets": {
         "name": "Kontaktformulär"
+      },
+      "settings": {
+        "heading": {
+          "label": "Rubrik"
+        },
+        "description": {
+          "label": "Beskrivning"
+        }
       }
     },
     "custom-liquid": {
