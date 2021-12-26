@@ -68,7 +68,7 @@
             "image": "shopify:\/\/shop_images\/003-shopping-cart_f0040b73-204f-496f-9a61-49e47c5eb75e.png",
             "title": "Order & beställning",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/pages\/vanliga-fragor-order-bestallning",
             "link_label": "",
             "link": ""
           }
@@ -79,7 +79,7 @@
             "image": "shopify:\/\/shop_images\/004-credit-card.png",
             "title": "Betalning",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/pages\/vanliga-fragor-betalning",
             "link_label": "",
             "link": ""
           }
@@ -90,7 +90,7 @@
             "image": "shopify:\/\/shop_images\/002-van.png",
             "title": "Leverans & frakt",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/pages\/vanliga-fragor-leverans-frakt",
             "link_label": "",
             "link": ""
           }
@@ -101,7 +101,7 @@
             "image": "shopify:\/\/shop_images\/005-box.png",
             "title": "Retur & reklamation",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/pages\/vanliga-fragor-retur-reklamation",
             "link_label": "",
             "link": ""
           }
@@ -112,7 +112,7 @@
             "image": "shopify:\/\/shop_images\/001-price-tag.png",
             "title": "Produktfrågor",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/pages\/vanliga-fragor-produktfragor",
             "link_label": "",
             "link": ""
           }
