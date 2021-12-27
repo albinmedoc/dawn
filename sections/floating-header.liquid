@@ -6,63 +6,61 @@
 
 {%- style -%}
 .notes-hero {
-    padding-bottom: 20px;
-    position: relative;
-    color: #fff;
-    background-color: var(--header-background);
-    margin-bottom: 0;
+  padding-bottom: 20px;
+  position: relative;
+  color: #fff;
+  background-color: var(--header-background);
+  margin-bottom: 0;
 }
 
 .notes-hero:after {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 41px;
-    content: "";
-    background-image: url(//cdn.shopify.com/s/files/1/0278/9382/5581/t/1/assets/notes.svg?v=1761050…);
-    background-repeat: repeat-x;
-    background-position: bottom;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 41px;
+  content: "";
+  background-image: url(//cdn.shopify.com/s/files/1/0278/9382/5581/t/1/assets/notes.svg?v=1761050…);
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 
 #notes {
-    position: relative;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    height: 100px;
-    overflow: hidden;
-    -webkit-animation: FadeIn 3s ease-out;
-    animation: FadeIn 3s ease-out;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 100px;
+  overflow: hidden;
+  -webkit-animation: FadeIn 3s ease-out;
+  animation: FadeIn 3s ease-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .note {
-    position: absolute;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    height: 70px;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-name: Float,FadeFloat;
-    animation-name: Float,FadeFloat;
-    z-index: 1;
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  height: 70px;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: Float,FadeFloat;
+  animation-name: Float,FadeFloat;
 }
 
 .note.big {
-    height: 15%;
-    min-height: 30px;
-    z-index: 3;
+  height: 15%;
+  min-height: 30px;
 	background-image: url(//cdn.shopify.com/s/files/1/0564/2813/4553/files/note1.svg?v=1638907830);
 }
 
@@ -73,131 +71,131 @@
 }
 
 .note.small {
-    height: 5%;
-    min-height: 15px;
-    -webkit-animation-duration: 100s;
-    animation-duration: 100s;
+  height: 5%;
+  min-height: 15px;
+  -webkit-animation-duration: 100s;
+  animation-duration: 100s;
 	background-image: url(//cdn.shopify.com/s/files/1/0564/2813/4553/files/note2.svg?v=1638907830);
 }
 
 .note.big:nth-child(1) {
-    -webkit-animation-duration: 58s;
-    animation-duration: 58s;
-    height: 12.5%;
+  -webkit-animation-duration: 58s;
+  animation-duration: 58s;
+  height: 12.5%;
 }
 
 .note.small:nth-child(2) {
-    -webkit-animation-duration: 73s;
-    animation-duration: 73s;
-    height: 6.59090909%;
+  -webkit-animation-duration: 73s;
+  animation-duration: 73s;
+  height: 6.59090909%;
 }
 
 .note.big:nth-child(3) {
-    -webkit-animation-duration: 54s;
-    animation-duration: 54s;
-    height: 17.5%;
+  -webkit-animation-duration: 54s;
+  animation-duration: 54s;
+  height: 17.5%;
 }
 
 .note.small:nth-child(4) {
-    -webkit-animation-duration: 67s;
-    animation-duration: 67s;
-    height: 4.09090909%;
+  -webkit-animation-duration: 67s;
+  animation-duration: 67s;
+  height: 4.09090909%;
 }
 
 .note.big:nth-child(5) {
-    -webkit-animation-duration: 50s;
-    animation-duration: 50s;
-    height: 22.5%;
+  -webkit-animation-duration: 50s;
+  animation-duration: 50s;
+  height: 22.5%;
 }
 
 .note.small:nth-child(6) {
-    -webkit-animation-duration: 63s;
-    animation-duration: 63s;
-    height: 1.59090909%;
+  -webkit-animation-duration: 63s;
+  animation-duration: 63s;
+  height: 1.59090909%;
 }
 
 .note.small:nth-child(7) {
-    -webkit-animation-duration: 61s;
-    animation-duration: 61s;
-    height: .34090909%;
+  -webkit-animation-duration: 61s;
+  animation-duration: 61s;
+  height: .34090909%;
 }
 
 .note.small:nth-child(8) {
-    -webkit-animation-duration: 59s;
-    animation-duration: 59s;
-    height: -.90909091%;
+  -webkit-animation-duration: 59s;
+  animation-duration: 59s;
+  height: -.90909091%;
 }
 
 .note.big:nth-child(9) {
-    -webkit-animation-duration: 42s;
-    animation-duration: 42s;
-    height: 32.5%;
+  -webkit-animation-duration: 42s;
+  animation-duration: 42s;
+  height: 32.5%;
 }
 
 .note.small:nth-child(10) {
-    -webkit-animation-duration: 55s;
-    animation-duration: 55s;
-    height: -3.40909091%;
+  -webkit-animation-duration: 55s;
+  animation-duration: 55s;
+  height: -3.40909091%;
 }
 
 .note:nth-child(1) {
-    -webkit-animation-delay: -18.46153846s;
-    animation-delay: -18.46153846s;
-    top: 6%;
+  -webkit-animation-delay: -18.46153846s;
+  animation-delay: -18.46153846s;
+  top: 6%;
 }
 
 .note:nth-child(2) {
-    -webkit-animation-delay: -36.92307692s;
-    animation-delay: -36.92307692s;
-    top: 12%;
+  -webkit-animation-delay: -36.92307692s;
+  animation-delay: -36.92307692s;
+  top: 12%;
 }
 
 .note:nth-child(3) {
-    -webkit-animation-delay: -55.38461538s;
-    animation-delay: -55.38461538s;
-    top: 18%;
+  -webkit-animation-delay: -55.38461538s;
+  animation-delay: -55.38461538s;
+  top: 18%;
 }
 
 .note:nth-child(4) {
-    -webkit-animation-delay: -73.84615385s;
-    animation-delay: -73.84615385s;
-    top: 24%;
+  -webkit-animation-delay: -73.84615385s;
+  animation-delay: -73.84615385s;
+  top: 24%;
 }
 
 .note:nth-child(5) {
-    -webkit-animation-delay: -92.30769231s;
-    animation-delay: -92.30769231s;
-    top: 30%;
+  -webkit-animation-delay: -92.30769231s;
+  animation-delay: -92.30769231s;
+  top: 30%;
 }
 
 .note:nth-child(6) {
-    -webkit-animation-delay: -110.76923077s;
-    animation-delay: -110.76923077s;
-    top: 36%;
+  -webkit-animation-delay: -110.76923077s;
+  animation-delay: -110.76923077s;
+  top: 36%;
 }
 
 .note:nth-child(7) {
-    -webkit-animation-delay: -129.23076923s;
-    animation-delay: -129.23076923s;
-    top: 42%;
+  -webkit-animation-delay: -129.23076923s;
+  animation-delay: -129.23076923s;
+  top: 42%;
 }
 
 .note:nth-child(8) {
-    -webkit-animation-delay: -147.69230769s;
-    animation-delay: -147.69230769s;
-    top: 48%;
+  -webkit-animation-delay: -147.69230769s;
+  animation-delay: -147.69230769s;
+  top: 48%;
 }
 
 .note:nth-child(9) {
-    -webkit-animation-delay: -166.15384615s;
-    animation-delay: -166.15384615s;
-    top: 54%;
+  -webkit-animation-delay: -166.15384615s;
+  animation-delay: -166.15384615s;
+  top: 54%;
 }
 
 .note:nth-child(10) {
-    -webkit-animation-delay: -184.61538462s;
-    animation-delay: -184.61538462s;
-    top: 60%;
+  -webkit-animation-delay: -184.61538462s;
+  animation-delay: -184.61538462s;
+  top: 60%;
 }
 
 @-webkit-keyframes Float {
