@@ -25,6 +25,19 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
+        "blocks": {
+          "858bda4b-ffef-442c-bc1e-8044ebaabc50": {
+            "type": "announcement",
+            "settings": {
+              "text": "Alltid fri frakt!",
+              "color_scheme": "inverse",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "858bda4b-ffef-442c-bc1e-8044ebaabc50"
+        ],
         "settings": {
         }
       },
