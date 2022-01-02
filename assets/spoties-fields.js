@@ -315,6 +315,16 @@ if (!customElements.get('spoties-artist-field')) {
     customElements.define('spoties-artist-field', SpotiesArtistField);
 }
 
+class SpotiesOptionField extends HTMLElement {
+    validate() {
+        return true;
+    }
+}
+
+if (!customElements.get('spoties-option-field')) {
+    customElements.define('spoties-option-field', SpotiesOptionField);
+}
+
 class SpotiesOptionErrors extends HTMLElement {
     clear() {
         while (this.firstChild) {
@@ -349,11 +359,8 @@ class SpotiesFields extends HTMLElement {
     }
 
     validate() {
-        let results = [];
-        this.children.forEach((field) => {
-            results.push(field.validate());
-        });
-        return results.every(Boolean);;
+        const children = Array.from(this.children);
+        return children.map((child) => child.validate).every(Boolean);;
     }
 
     addToFormData(formData) {

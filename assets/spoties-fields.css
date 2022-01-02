@@ -8,11 +8,12 @@
     text-align: left;
 }
 
-.spoties__option > label {
+.spoties__option > label, .spoties__label {
     display: flex !important;
     float: none !important;
     align-items: center;
     position: relative;
+    font-size: 1.7rem;
 }
 
 .spoties__option input, .spoties__option select, .spoties__option button, .spoties__option > div > label {

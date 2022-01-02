@@ -86,6 +86,23 @@
                     <spoties-option-errors></spoties-option-errors>
                 </div>
             </spoties-text-field>
+        {%- when 'option' -%}
+            <spoties-option-field>
+                <fieldset class="js product-form__input">
+                    <label class="spoties__label">{{ option.label }}</label>
+                    {%- for value in option.values -%}
+                        <input type="radio" id="{{ section.id }}-spoties-option-{{ forloop.index0 }}"
+                            name="properties[{{ option.name }}]"
+                            value="{{ value | escape }}"
+                            form="{{ form_id }}"
+                            {% if option.selected_value == value %}checked{% endif %}
+                        >
+                        <label for="{{ section.id }}-spoties-option-{{ forloop.index0 }}">
+                            {{ value }}
+                        </label>
+                    {%- endfor -%}
+                </fieldset>
+            </spoties-option-field>
         {%- endcase -%}
     {%- endfor -%}
 </spoties-fields>
