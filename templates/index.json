@@ -197,6 +197,7 @@
     },
     "164081304624eba4b8": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "1640813046b3a36ed7-1": {
           "type": "title",
