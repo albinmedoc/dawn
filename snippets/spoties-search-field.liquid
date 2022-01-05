@@ -4,13 +4,18 @@
     Accepts:
     - product: {Object} Product Liquid object
     - form_id: {String} Id of the product form
-    - section: {Object} 
+    - section: {Object}
+    - required: If the field is required
 
     Usage:
     {% render 'spoties-search-field' product: product, form_id: product_form_id, section: section %}
 {% endcomment %}
 
-<spoties-search-field>
+<spoties-search-field
+    {% if required %}
+        required
+    {% endif %}
+>
     <div class="spoties__option">
         <label for="{{ section.id }}-search">Sök</label>
         <div class="spoties_search_fields">

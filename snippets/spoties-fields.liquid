@@ -17,7 +17,7 @@
     {%- for option in product.metafields.spoties.options.value -%}
         {%- case option.type -%}
         {%- when 'search' -%}
-            {% render 'spoties-search-field' product: product, form_id: form_id, section: section %}
+            {% render 'spoties-search-field' product: product, form_id: form_id, section: section, required: option.required %}
         {%- when 'cover-image' -%}
             {% render 'spoties-cover-field' product: product, form_id: form_id, section: section %}
         {%- when 'record-name' -%}

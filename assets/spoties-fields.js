@@ -43,6 +43,7 @@ class SpotiesSearch extends HTMLElement {
     constructor() {
         super();
 
+        this.required = this.hasAttribute('required');
         this.search_field = this.querySelector('input[type="text"]');
         this.search_type_field = this.querySelector('select');
         this.search_results_container = this.querySelector('.search__results__container');
@@ -74,8 +75,8 @@ class SpotiesSearch extends HTMLElement {
     validate() {
         this.errors.clear();
         let valid = true;
-        if (this.hasAttribute('required')) {
-            valid = this.spotify_uri !== '';
+        if (this.required) {
+            valid = this.spotify_uri !== '' && this.spotify_uri != null;
             if (!valid) {
                 this.errors.add('Var vänlig och välj en låt')
             }
@@ -213,7 +214,7 @@ class SpotiesCoverImage extends HTMLElement {
 
     validate() {
         this.errors.clear();
-        const valid = this.cover_data !== '';
+        const valid = this.cover_data !== '' && this.cover_data != null;
         if (!valid) {
             this.errors.add('Var vänlig och ange en omslagsbild')
         }
@@ -360,11 +361,13 @@ class SpotiesFields extends HTMLElement {
 
     validate() {
         const children = Array.from(this.children);
-        return children.map((child) => child.validate).every(Boolean);;
+        const valid = children.map((child) => child.validate()).every(Boolean);
+        console.log(valid);
+        return valid;
     }
 
     addToFormData(formData) {
-        if(this.search_field) {
+        if(this.search_field && this.search_field.required) {
             formData.append('properties[_Spotify URI]', this.search_field.spotify_uri);
             formData.append('properties[Spotify Code]', this.search_field.spotify_code, 'spotify_code.png');
         }
