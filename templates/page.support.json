@@ -166,7 +166,7 @@
             "image": "shopify:\/\/shop_images\/004-accept.png",
             "title": "Användarvillkor",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/policies\/terms-of-service",
             "link_label": "",
             "link": ""
           }
@@ -177,7 +177,7 @@
             "image": "shopify:\/\/shop_images\/001-product.png",
             "title": "Fraktpolicy",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/policies\/shipping-policy",
             "link_label": "",
             "link": ""
           }
@@ -188,7 +188,7 @@
             "image": "shopify:\/\/shop_images\/002-insurance.png",
             "title": "Integritetspolicy",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/policies\/privacy-policy",
             "link_label": "",
             "link": ""
           }
@@ -199,7 +199,7 @@
             "image": "shopify:\/\/shop_images\/003-refund.png",
             "title": "Återbetalningspolicy",
             "text": "",
-            "columnlink": "",
+            "columnlink": "shopify:\/\/policies\/refund-policy",
             "link_label": "",
             "link": ""
           }
