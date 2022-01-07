@@ -216,7 +216,7 @@
         "description": "",
         "image_width": "fifth",
         "image_ratio": "square",
-        "column_alignment": "center",
+        "column_alignment": "left",
         "background_style": "none",
         "button_label": "",
         "button_link": "",
