@@ -216,8 +216,8 @@
         "description": "",
         "image_width": "fifth",
         "image_ratio": "square",
-        "column_alignment": "left",
-        "background_style": "none",
+        "column_alignment": "center",
+        "background_style": "primary",
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false
