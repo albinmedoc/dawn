@@ -1448,6 +1448,10 @@
             "show_dynamic_checkout": {
               "label": "Visa dynamiska utcheckningsknappar",
               "info": "Genom att använda tillgängliga betalningsmetoder i butiken kan kunder se valt alternativ, till exempel PayPal eller Apple Pay. [Läs mer](https:\/\/help.shopify.com\/manual\/using-themes\/change-the-layout\/dynamic-checkout)"
+            },
+            "show_approve_message": {
+              "label": "Visa granska meddelande",
+              "info": "Berättar för kunden att dom bekräftar produktanpassningen när dom klickar på köpknappen. Informationen kan inte ändras efter beställningen är lagd."
             }
           },
           "name": "Köpknappar"

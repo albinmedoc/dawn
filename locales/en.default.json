@@ -102,6 +102,7 @@
   "products": {
     "product": {
       "add_to_cart": "Add to cart",
+      "approve_message": "<b> Always </b> review the information before completing your purchase. After ordering, it is <b> not possible </b> to change the information.",
       "description": "Description",
       "on_sale": "Sale",
       "product_variants": "Product variants",
