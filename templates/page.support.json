@@ -156,12 +156,79 @@
         "heading": "Kontakta oss",
         "description": "<p>Hitta du inte ditt svar är du varm välkommen att kontakta oss. Vi strävar att återkoppla inom 24 timmar.<\/p>"
       }
+    },
+    "1641559377104f9011": {
+      "type": "multicolumn",
+      "blocks": {
+        "1641559377de1c4c1e-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/004-accept.png",
+            "title": "Användarvillkor",
+            "text": "",
+            "columnlink": "shopify:\/\/policies\/terms-of-service",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1641559377de1c4c1e-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/001-product.png",
+            "title": "Fraktpolicy",
+            "text": "",
+            "columnlink": "shopify:\/\/policies\/shipping-policy",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1641559377de1c4c1e-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/002-insurance.png",
+            "title": "Integritetspolicy",
+            "text": "",
+            "columnlink": "shopify:\/\/policies\/privacy-policy",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "66b22904-904b-4e3a-93d5-6b11372a897b": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/003-refund.png",
+            "title": "Återbetalningspolicy",
+            "text": "",
+            "columnlink": "shopify:\/\/policies\/refund-policy",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1641559377de1c4c1e-0",
+        "1641559377de1c4c1e-1",
+        "1641559377de1c4c1e-2",
+        "66b22904-904b-4e3a-93d5-6b11372a897b"
+      ],
+      "settings": {
+        "title": "Villkor och policyer",
+        "description": "",
+        "image_width": "fifth",
+        "image_ratio": "square",
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false
+      }
     }
   },
   "order": [
     "main",
     "1640274252aeb39489",
     "16404711237b44be75",
-    "1640470502e1378638"
+    "1640470502e1378638",
+    "1641559377104f9011"
   ]
 }
