@@ -38,7 +38,6 @@
         },
         "d6f9068e-8cb9-4030-9f68-415e1652e597": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
             "heading": "Specifikation",
             "content": "<p>{{ product.metafields.spoties.specification | metafield_tag }}<\/p>",
