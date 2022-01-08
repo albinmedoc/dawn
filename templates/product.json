@@ -27,12 +27,23 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false
+            "show_dynamic_checkout": false,
+            "show_approve_message": true
           }
         },
         "description": {
           "type": "description",
           "settings": {
+          }
+        },
+        "d6f9068e-8cb9-4030-9f68-415e1652e597": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Specifikation",
+            "content": "<p>{{ product.metafields.spoties.specification | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
           }
         }
       },
@@ -42,7 +53,8 @@
         "variant_picker",
         "6ac408ff-f3d0-43d3-83fd-801760c32616",
         "buy_buttons",
-        "description"
+        "description",
+        "d6f9068e-8cb9-4030-9f68-415e1652e597"
       ],
       "settings": {
         "enable_sticky_info": true,
