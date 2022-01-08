@@ -102,15 +102,15 @@
   "products": {
     "product": {
       "add_to_cart": "Lägg i varukorgen",
-      "approve_message": "Granska <b>alltid</b> informationen innan du slutför ditt köp. Efter beställning är det <b>inte möjligt</b> att ändra informationen.",
+      "approve_message": "Granska <b>alltid<\/b> informationen innan du slutför ditt köp. Efter beställning är det <b>inte möjligt<\/b> att ändra informationen.",
       "description": "Beskrivning",
       "on_sale": "Rea",
       "product_variants": "Produktvarianter",
       "quantity": {
-        "label": "Kvantitet",
-        "input_label": "Kvantitet för {{ product }}",
-        "increase": "Öka kvantitet för {{ product }}",
-        "decrease": "Minska kvantitet för {{ product }}"
+        "label": "Antal",
+        "input_label": "Antal för {{ product }}",
+        "increase": "Öka antalet för {{ product }}",
+        "decrease": "Minska antalet för {{ product }}"
       },
       "price": {
         "from_price_html": "Från {{ price }}",
@@ -243,7 +243,7 @@
         "product": "Produkt",
         "price": "Pris",
         "total": "Totalt",
-        "quantity": "Kvantitet"
+        "quantity": "Antal"
       },
       "update": "Uppdatera",
       "login": {
@@ -388,7 +388,7 @@
       "product": "Produkt",
       "sku": "SKU",
       "price": "Pris",
-      "quantity": "Kvantitet",
+      "quantity": "Antal",
       "total": "Totalt",
       "fulfilled_at_html": "Distribuerad {{ date }}",
       "track_shipment": "Spåra försändelse",
@@ -411,6 +411,21 @@
       "expired": "Har gått ut",
       "copy_code_success": "Koden kopierades",
       "print_gift_card": "Skriv ut"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "stock": {
+        "quantity_column_header": "Antal"
+      },
+      "order_summary": {
+        "quantity_label": "Antal"
+      },
+      "thank_you": {
+        "fulfillment": {
+          "quantity_label": "Antal"
+        }
+      }
     }
   }
 }
