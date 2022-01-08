@@ -20,7 +20,7 @@
   width: 100%;
   height: 41px;
   content: "";
-  background-image: url(//cdn.shopify.com/s/files/1/0278/9382/5581/t/1/assets/notes.svg?v=1761050…);
+  background-image: url({{ 'floating-header-fade.svg' | asset_url }});
   background-repeat: repeat-x;
   background-position: bottom;
 }
@@ -61,7 +61,7 @@
 .note.big {
   height: 15%;
   min-height: 30px;
-	background-image: url(//cdn.shopify.com/s/files/1/0564/2813/4553/files/note1.svg?v=1638907830);
+	background-image: url({{ 'note1.svg' | asset_url }});
 }
 
 @media (max-width: 540px){
@@ -75,7 +75,7 @@
   min-height: 15px;
   -webkit-animation-duration: 100s;
   animation-duration: 100s;
-	background-image: url(//cdn.shopify.com/s/files/1/0564/2813/4553/files/note2.svg?v=1638907830);
+	background-image: url({{ 'note2.svg' | asset_url }});
 }
 
 .note.big:nth-child(1) {
