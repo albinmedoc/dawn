@@ -28,7 +28,14 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
-            "show_approve_message": true
+            "show_approve_message": false
+          }
+        },
+        "60b77b3e-8ba4-4de6-88d9-afe9dd98c02e": {
+          "type": "text",
+          "settings": {
+            "text": "Granska <b>alltid<\/b> informationen innan du slutför ditt köp. Efter beställning är det <b>inte möjligt<\/b> att ändra informationen.",
+            "text_style": "body"
           }
         },
         "description": {
@@ -52,6 +59,7 @@
         "variant_picker",
         "6ac408ff-f3d0-43d3-83fd-801760c32616",
         "buy_buttons",
+        "60b77b3e-8ba4-4de6-88d9-afe9dd98c02e",
         "description",
         "d6f9068e-8cb9-4030-9f68-415e1652e597"
       ],
