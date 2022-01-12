@@ -2,6 +2,7 @@
   "sections": {
     "featured_products": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Produkter med snabbare leverans",
         "collection": "snabb-leverans",
@@ -9,6 +10,22 @@
         "show_view_all": true,
         "swipe_on_mobile": false,
         "image_ratio": "square",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "1640253729e53f5137": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Populära produkter",
+        "collection": "populara-produkter",
+        "products_to_show": 4,
+        "show_view_all": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
         "show_secondary_image": false,
         "add_image_padding": false,
         "show_image_outline": true,
@@ -30,22 +47,6 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
-      }
-    },
-    "1640253729e53f5137": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Populära produkter",
-        "collection": "populara-produkter",
-        "products_to_show": 4,
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "add_image_padding": false,
-        "show_image_outline": true,
-        "show_vendor": false,
-        "show_rating": false
       }
     },
     "1640253781f9ef190e": {
@@ -206,8 +207,8 @@
   },
   "order": [
     "featured_products",
-    "16408129463ea4a7d9",
     "1640253729e53f5137",
+    "16408129463ea4a7d9",
     "1640253781f9ef190e",
     "16402537844360004c",
     "16402542534bf8efbc",
