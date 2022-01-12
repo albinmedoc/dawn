@@ -1,53 +1,5 @@
 {
   "sections": {
-    "16408129463ea4a7d9": {
-      "type": "image-banner",
-      "disabled": true,
-      "blocks": {
-        "1640812946474ef108-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "medium"
-          }
-        },
-        "1640812946474ef108-1": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "1640812946474ef108-2": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "1640812946474ef108-0",
-        "1640812946474ef108-1",
-        "1640812946474ef108-2"
-      ],
-      "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "adapt_height_first_image": false,
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
     "featured_products": {
       "type": "featured-collection",
       "settings": {
@@ -62,6 +14,22 @@
         "show_image_outline": true,
         "show_vendor": false,
         "show_rating": false
+      }
+    },
+    "16408129463ea4a7d9": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Cover_ecd7f844-fae0-4cc6-b31c-e7860ca431da.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "1640253729e53f5137": {
@@ -237,8 +205,8 @@
     }
   },
   "order": [
-    "16408129463ea4a7d9",
     "featured_products",
+    "16408129463ea4a7d9",
     "1640253729e53f5137",
     "1640253781f9ef190e",
     "16402537844360004c",

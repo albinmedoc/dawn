@@ -21,10 +21,27 @@
         "enable_sorting": false,
         "collapse_on_larger_devices": false
       }
+    },
+    "1641976019966361e7": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Cover_ecd7f844-fae0-4cc6-b31c-e7860ca431da.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "1641976019966361e7"
   ]
 }
