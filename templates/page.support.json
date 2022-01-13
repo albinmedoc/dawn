@@ -140,7 +140,7 @@
       ],
       "settings": {
         "title": "Frågor och svar",
-        "description": "<p>Genom knapparna nedan hittar du svar på alla de vanligaste frågorna vi tar emot. Ta gärna en titt här innan du kontaktar oss för att snabbt hitta en lösning på dina funderingar.<\/p>",
+        "description": "<p>Genom knapparna nedan hittar du svar på alla de vanligaste frågorna vi tar emot. Ta gärna en titt här innan du <a href=\"#ShopifyChat\" title=\"#ShopifyChat\">kontaktar oss<\/a> för att snabbt hitta en lösning på dina funderingar.<\/p>",
         "image_width": "sixth",
         "image_ratio": "adapt",
         "column_alignment": "center",
@@ -152,6 +152,7 @@
     },
     "1640470502e1378638": {
       "type": "contact-form",
+      "disabled": true,
       "settings": {
         "heading": "Kontakta oss",
         "description": "<p>Hitta du inte ditt svar är du varm välkommen att kontakta oss. Vi strävar att återkoppla inom 24 timmar.<\/p>"
