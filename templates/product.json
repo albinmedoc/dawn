@@ -24,15 +24,40 @@
           "settings": {
           }
         },
+        "60b77b3e-8ba4-4de6-88d9-afe9dd98c02e": {
+          "type": "text",
+          "settings": {
+            "text": "Granska <b>alltid<\/b> informationen innan du slutför ditt köp. Efter beställning är det <b>inte möjligt<\/b> att ändra informationen.",
+            "text_style": "body"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false
+            "show_dynamic_checkout": false,
+            "show_approve_message": false
           }
         },
         "description": {
           "type": "description",
           "settings": {
+          }
+        },
+        "d6f9068e-8cb9-4030-9f68-415e1652e597": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Specifikation",
+            "content": "<p>{{ product.metafields.spoties.specification | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "38ec5804-3f29-4ae0-80c5-f22b177f7de8": {
+          "type": "popup",
+          "disabled": true,
+          "settings": {
+            "text": "Hur funkar Spotify-koden?",
+            "page": ""
           }
         }
       },
@@ -41,8 +66,11 @@
         "price",
         "variant_picker",
         "6ac408ff-f3d0-43d3-83fd-801760c32616",
+        "60b77b3e-8ba4-4de6-88d9-afe9dd98c02e",
         "buy_buttons",
-        "description"
+        "description",
+        "d6f9068e-8cb9-4030-9f68-415e1652e597",
+        "38ec5804-3f29-4ae0-80c5-f22b177f7de8"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -64,10 +92,27 @@
         "show_vendor": false,
         "show_rating": false
       }
+    },
+    "1641976151a87e599b": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Cover_ecd7f844-fae0-4cc6-b31c-e7860ca431da.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "1641976151a87e599b"
   ]
 }
