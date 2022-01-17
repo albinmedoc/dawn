@@ -24,7 +24,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/001-cashback.png",
             "title": "Reklamation",
-            "text": "<p>Skulle en produkt av någon anledning vara sönder eller ha ett fel på något sätt så kompenserar vi dig.<\/p>",
+            "text": "<p>Skulle en produkt av någon anledning vara sönder eller ha ett fel så kompenserar vi dig.<\/p>",
             "columnlink": "",
             "link_label": "",
             "link": ""
@@ -35,7 +35,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/003-envelope.png",
             "title": "Kontakt",
-            "text": "<p>Har du någon fråga eller speciella önskemål. Vi strävar att besvara ditt mail inom 24 timmar.<\/p>",
+            "text": "<p>Har du någon fråga eller speciella önskemål. Vi strävar att besvara inom 24 timmar.<\/p>",
             "columnlink": "",
             "link_label": "",
             "link": ""
