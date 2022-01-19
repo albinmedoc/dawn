@@ -3,7 +3,11 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
-        "image_ratio": "square"
+        "title": "Kollektioner",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "color_scheme": "background-2",
+        "image_padding": false
       }
     }
   },
