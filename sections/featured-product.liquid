@@ -83,16 +83,6 @@
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
               </div>
-              {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-                <div class="product__tax caption rte">
-                  {%- if shop.taxes_included -%}
-                    {{ 'products.product.include_taxes' | t }}
-                  {%- endif -%}
-                  {%- if shop.shipping_policy.body != blank -%}
-                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                  {%- endif -%}
-                </div>
-              {%- endif -%}
               {%- if product != blank -%}
                 <div {{ block.shopify_attributes }}>
                   {%- form 'product', product -%}
@@ -162,6 +152,8 @@
                   </div>
                 </details>
               </share-button>
+            {%- when 'spoties_fields' -%}
+              {% render 'spoties-fields' product: product, form_id: product_form_id, section: section %}
             {%- when 'variant_picker' -%}
               {%- unless product.has_only_default_variant -%}
                 {%- if block.settings.picker_type == 'button' -%}
@@ -482,6 +474,11 @@
   "tag": "section",
   "class": "featured-product-section spaced-section spaced-section--full-width",
   "blocks": [
+    {
+      "type": "spoties_fields",
+      "name": "Spoties fields",
+      "limit": 1
+    },
     {
       "type": "text",
       "name": "t:sections.featured-product.blocks.text.name",

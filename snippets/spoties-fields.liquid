@@ -10,6 +10,9 @@
     {% render 'spoties-fields' product: product, form_id: product_form_id, section: section %}
 {% endcomment %}
 
+{{ 'cropper.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'cropper.min.js' | asset_url }}" defer="defer"></script>
+
 {{ 'spoties-fields.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'spoties-fields.js' | asset_url }}" defer="defer"></script>
 
