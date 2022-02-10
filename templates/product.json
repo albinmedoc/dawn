@@ -27,15 +27,14 @@
         "60b77b3e-8ba4-4de6-88d9-afe9dd98c02e": {
           "type": "text",
           "settings": {
-            "text": "Granska <b>alltid<\/b> informationen innan du slutför ditt köp. Efter beställning är det <b>inte möjligt<\/b> att ändra informationen.",
+            "text": "Granska <b>alltid<\/b> informationen innan du slutför ditt köp. Efter beställning är det <b>inte möjligt<\/b> att ändra informationen eller avbryta beställningen.",
             "text_style": "body"
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
-            "show_approve_message": false
+            "show_dynamic_checkout": false
           }
         },
         "description": {

@@ -102,7 +102,6 @@
   "products": {
     "product": {
       "add_to_cart": "Lägg i varukorgen",
-      "approve_message": "Granska <b>alltid<\/b> informationen innan du slutför ditt köp. Efter beställning är det <b>inte möjligt<\/b> att ändra informationen.",
       "description": "Beskrivning",
       "on_sale": "Rea",
       "product_variants": "Produktvarianter",

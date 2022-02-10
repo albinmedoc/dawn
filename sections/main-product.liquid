@@ -407,11 +407,6 @@
                     {%- endif -%}
                   </div>
                 {%- endform -%}
-                {%- if block.settings.show_approve_message -%}
-                  <div>
-                    <p>Granska <b>alltid</b> informationen innan du slutför ditt köp. Efter beställning är det <b>inte möjligt</b> att ändra informationen.</p>
-                  </div>
-                {%- endif -%}
               </product-form>
 
               {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
@@ -720,13 +715,6 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_approve_message",
-          "default": true,
-          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_approve_message.label",
-          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_approve_message.info"
         }
       ]
     },
