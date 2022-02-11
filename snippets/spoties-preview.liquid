@@ -1,0 +1,30 @@
+{% comment %}
+    Renders the spoties preview for a product
+
+    Accepts:
+    - product: {Object} Product Liquid object
+
+    Usage:
+    {% render 'spoties-preview' product: product %}
+{% endcomment %}
+
+<spoties-preview
+    settings='{{ product.metafields.spoties.preview.value.settings | json }}'
+    templateImages='{{ product.metafields.spoties.preview.value.templateImages | json }}'
+    selectedVariant='{{ product.selected_or_first_available_variant.id }}'>
+    <div class="spoties__option">
+        <div>
+            <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#SpotiesModal-Preview">
+                <label role="button" aria-haspopup="dialog">Förhandsvisa produkt</label>
+            </modal-opener>
+        </div>
+    </div>
+    <modal-dialog id="SpotiesModal-Preview" class="product-popup-modal">
+        <div role="dialog" aria-label="Förhandsvisning av omslagsbild" aria-modal="true" class="product-popup-modal__content" tabindex="-1">
+            <button id="ModalClose-Spoties-Preview" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+            <div>
+                <img loading="lazy" crossorigin="anonymous">
+            </div>
+        </div>
+    </modal-dialog>
+</spoties-preview>

@@ -16,7 +16,7 @@
     font-size: 1.7rem;
 }
 
-.spoties__option input, .spoties__option select, .spoties__option button, .spoties__option > div > label {
+.spoties__option input, .spoties__option select, .spoties__option button, .spoties__option > div label {
     color: #374151;
     background-color: #fff;
     font-size: 16px;
@@ -127,12 +127,12 @@ spoties-cover-field > input[type="file"] {
     display: none;
 }
 
-spoties-cover-field > .spoties__option > div {
+spoties-cover-field > .spoties__option > div, spoties-preview > .spoties__option > div > modal-opener {
     display: flex;
     align-items: flex-start;
 }
 
-spoties-cover-field > .spoties__option > div > label{
+spoties-cover-field > .spoties__option > div > label, spoties-preview > .spoties__option > div > modal-opener label{
     width: auto;
     margin-right: 1rem;
 }
@@ -141,16 +141,16 @@ spoties-cover-field > .spoties__option img {
     height: 50px;
 }
 
-#SpotiesModal-Edit .product-popup-modal__content, #SpotiesModal-Preview .product-popup-modal__content {
+#SpotiesModal-Preview .product-popup-modal__content, #SpotiesModal-Cover-Edit .product-popup-modal__content, #SpotiesModal-Cover-Preview .product-popup-modal__content {
     height: auto;
     padding: 0 3rem 35px 3rem;
 }
 
-#SpotiesModal-Edit button {
+#SpotiesModal-Cover-Edit button {
     background-color: #95c11f;
     color: #fff;
 }
 
-#SpotiesModal-Preview img {
+#SpotiesModal-Preview img, #SpotiesModal-Cover-Preview img {
     width: 100%;
 }

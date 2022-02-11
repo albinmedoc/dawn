@@ -291,6 +291,10 @@
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'spoties_fields' -%}
             {% render 'spoties-fields' product: product, form_id: product_form_id, section: section %}
+          {%- when 'spoties_preview' -%}
+            {%- if product.metafields.spoties.preview != blank -%}
+              {% render 'spoties-preview' product: product %}
+            {%- endif -%}
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
@@ -632,6 +636,11 @@
     {
       "type": "spoties_fields",
       "name": "Spoties fields",
+      "limit": 1
+    },
+    {
+      "type": "spoties_preview",
+      "name": "Spoties preview",
       "limit": 1
     },
     {
