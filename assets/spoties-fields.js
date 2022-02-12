@@ -446,6 +446,13 @@ class SpotiesProductPreviewImage extends SpotiesElement {
         this.template_images = JSON.parse(this.getAttribute('templateImages')) || [];
         this.settings = JSON.parse(this.getAttribute('settings')) || [];
 
+        this.defaults = {
+            record: this.getAttribute('defaultRecordName'),
+            artist: this.getAttribute('defaultArtistName'),
+            cover: this.getAttribute('defaultCoverImage'),
+            spotify_uri: this.getAttribute('defaultSpotifyUri'),
+        }
+
         this.spoties_fields.addEventListener('spotiesUpdate', (event) => this.repaint(event.detail));
         this.variant_radios.addEventListener('change', () => this.setAttribute('selectedVariant', this.variant_radios.currentVariant.id));
 
@@ -484,14 +491,14 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                 this.settings[this.preview_id].forEach((element) => {
                     if (element.type === 'cover' && typeof detail[`spoties-cover`] !== 'object') {
                         const key = 'spoties-cover';
-                        const src = detail[key] || element.default;
+                        const src = detail[key] || this.defaults['cover'];
                         const promise = this.loadImage(src).then((image) => {
                             detail[key] = image;
                         });
                         promises.push(promise);
                     }
                     else if (element.type === 'code' && typeof detail[`spoties-${element.type}`] !== 'object') {
-                        const src = detail['spotify-uri'] || element.default;
+                        const src = detail['spotify-uri'] || this.defaults['spotify_uri'];
                         const color = element.color || 'black';
                         const promise = this.getSpotifyCode(src, true, true, color).then((src) => {
                             return this.loadImage(src);
@@ -503,7 +510,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                     else if ((element.type === 'record' ||
                         element.type === 'artist' ||
                         element.type === 'text') &&
-                        element.font) {
+                        element.font?.src) {
                         // Load fonts
                         promises.push(new Promise((resolve, reject) => {
                             var font = new FontFace(element.font.name, `url(${element.font.src})`);
@@ -540,7 +547,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                         case 'record':
                         case 'artist':
                         case 'text':
-                            const text = detail[key] || element.default;
+                            const text = detail[key] || this.defaults[element.type] || element.default;
                             ctx.font = `${element.font?.weight || 'normal'} ${element.font?.size || 50}px ${element.font?.name || 'arial'}`;
                             ctx.textAlign = element.align || "center";
                             ctx.fillStyle = element.color || "black";

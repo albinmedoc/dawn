@@ -3,15 +3,22 @@
 
     Accepts:
     - product: {Object} Product Liquid object
+    - block : {Object} The Spoties Preview Block
 
     Usage:
-    {% render 'spoties-preview' product: product %}
+    {% render 'spoties-preview' product: product, block: block %}
 {% endcomment %}
 
 <spoties-preview
     settings='{{ product.metafields.spoties.preview.value.settings | json }}'
     templateImages='{{ product.metafields.spoties.preview.value.templateImages | json }}'
-    selectedVariant='{{ product.selected_or_first_available_variant.id }}'>
+    selectedVariant='{{ product.selected_or_first_available_variant.id }}'
+    defaultRecordName='{{ block.settings.record_name }}'
+    defaultArtistName='{{ block.settings.artist_name }}'
+    defaultCoverImage='{{ block.settings.cover_image | image_url }}'
+    defaultSpotifyUri='{{ block.settings.spotify_uri }}'
+    {{ block.shopify_attributes }}
+>
     <div class="spoties__option">
         <div>
             <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#SpotiesModal-Preview">

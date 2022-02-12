@@ -293,7 +293,7 @@
             {% render 'spoties-fields' product: product, form_id: product_form_id, section: section %}
           {%- when 'spoties_preview' -%}
             {%- if product.metafields.spoties.preview != blank -%}
-              {% render 'spoties-preview' product: product %}
+              {% render 'spoties-preview' product: product, block: block %}
             {%- endif -%}
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
@@ -641,7 +641,32 @@
     {
       "type": "spoties_preview",
       "name": "Spoties preview",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "record_name",
+          "default": "Record name",
+          "label": "Default record name"
+        },
+        {
+          "type": "text",
+          "id": "artist_name",
+          "default": "Artist name",
+          "label": "Default artist name"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Default cover image"
+        },
+        {
+          "type": "text",
+          "id": "spotify_uri",
+          "default": "spotify:track:4lhqb6JvbHId48OUJGwymk",
+          "label": "Default Spotify URI"
+        }
+      ]
     },
     {
       "type": "text",
