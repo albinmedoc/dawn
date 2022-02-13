@@ -66,7 +66,7 @@ class SpotiesElement extends HTMLElement {
     }
 
     async getSpotifyCode(spotify_uri, remove_background = false, remove_padding = false, color = 'black', background_color = 'ffffff', width = 1080) {
-        const bg_color = remove_background ? (color == 'black' ? 'ffffff' : '000000') : background_color;
+        const bg_color = remove_background ? (color == 'black' ? '000001' : 'fffffe') : background_color;
         const code_url = `https://scannables.scdn.co/uri/plain/png/${bg_color}/${color}/${width}/${spotify_uri}`;
         let src = await this.imgUrlToBase64(code_url);
         if (remove_padding) {
@@ -453,14 +453,30 @@ class SpotiesProductPreviewImage extends SpotiesElement {
             spotify_uri: this.getAttribute('defaultSpotifyUri'),
         }
 
-        this.spoties_fields.addEventListener('spotiesUpdate', (event) => this.repaint(event.detail));
-        this.variant_radios.addEventListener('change', () => this.setAttribute('selectedVariant', this.variant_radios.currentVariant.id));
+        this.data = {}
+
+        this.spoties_fields.addEventListener('spotiesUpdate', (event) => {
+            this.data = Object.assign(this.data, event.detail);
+            this.repaint(this.data);
+        });
+
+        this.variant_radios.addEventListener('change', () => {
+            const old_preview = this.preview;
+            this.current_variant = this.variant_radios.currentVariant.id;
+            if (!old_preview.variants.includes(this.current_variant)) {
+                this.repaint(this.data);
+            }
+        });
 
         this.repaint({});
     }
 
     get current_variant() {
         return this.getAttribute('selectedVariant');
+    }
+
+    set current_variant(value) {
+        this.setAttribute('selectedVariant', value);
     }
 
     get preview() {
@@ -582,12 +598,7 @@ class SpotiesFields extends SpotiesElement {
         }
 
         const children = Array.from(this.children);
-        children.forEach((child) => { child.addEventListener('update', (event) => this.onUpdate(event.detail)) });
-    }
-
-    onUpdate(detail) {
-        this.data = Object.assign(this.data, detail);
-        this.dispatchEvent(new CustomEvent('spotiesUpdate', { detail: this.data }));
+        children.forEach((child) => { child.addEventListener('update', (event) => this.dispatchEvent(new CustomEvent('spotiesUpdate', { detail: event.detail }))) });
     }
 
     validate() {
