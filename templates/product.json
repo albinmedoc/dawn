@@ -24,6 +24,14 @@
           "settings": {
           }
         },
+        "95221072-920a-484f-855d-28a6d539f49c": {
+          "type": "spoties_preview",
+          "settings": {
+            "record_name": "Record name",
+            "artist_name": "Artist name",
+            "spotify_uri": "spotify:track:4lhqb6JvbHId48OUJGwymk"
+          }
+        },
         "60b77b3e-8ba4-4de6-88d9-afe9dd98c02e": {
           "type": "text",
           "settings": {
@@ -65,6 +73,7 @@
         "price",
         "variant_picker",
         "6ac408ff-f3d0-43d3-83fd-801760c32616",
+        "95221072-920a-484f-855d-28a6d539f49c",
         "60b77b3e-8ba4-4de6-88d9-afe9dd98c02e",
         "buy_buttons",
         "description",
