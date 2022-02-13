@@ -460,13 +460,15 @@ class SpotiesProductPreviewImage extends SpotiesElement {
             this.repaint(this.data);
         });
 
-        this.variant_radios.addEventListener('change', () => {
-            const old_preview = this.preview;
-            this.current_variant = this.variant_radios.currentVariant.id;
-            if (!old_preview.variants.includes(this.current_variant)) {
-                this.repaint(this.data);
-            }
-        });
+        if (this.variant_radios) {
+            this.variant_radios.addEventListener('change', () => {
+                const old_preview = this.preview;
+                this.current_variant = this.variant_radios.currentVariant.id;
+                if (!old_preview.variants.includes(this.current_variant)) {
+                    this.repaint(this.data);
+                }
+            });
+        }
 
         this.repaint({});
     }
