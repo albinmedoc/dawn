@@ -438,7 +438,9 @@ if (!customElements.get('spoties-option-errors')) {
 class SpotiesProductPreviewImage extends SpotiesElement {
     constructor() {
         super();
-        this.preview_image = this.querySelector('img');
+        this.modal = this.querySelector('modal-dialog');
+
+        this.preview_image = this.modal.querySelector('img');
 
         this.spoties_fields = document.querySelector('spoties-fields');
         this.variant_radios = document.querySelector('variant-radios');
@@ -453,24 +455,32 @@ class SpotiesProductPreviewImage extends SpotiesElement {
             spotify_uri: this.getAttribute('defaultSpotifyUri'),
         }
 
-        this.data = {}
+        this.data = {};
+        this.last_print = {};
 
         this.spoties_fields.addEventListener('spotiesUpdate', (event) => {
             this.data = Object.assign(this.data, event.detail);
-            this.repaint(this.data);
         });
+
+        this.modal.addEventListener('open', () => {
+            const new_print = {
+                template: this.template_image,
+                data: {...this.data}
+            }
+
+            if (JSON.stringify(this.last_print) !== JSON.stringify(new_print)) {
+                this.getPreviewImage().then((image_src) => {
+                    this.updatePreviewImage(image_src);
+                    this.last_print = new_print;
+                });
+            }
+        })
 
         if (this.variant_radios) {
             this.variant_radios.addEventListener('change', () => {
-                const old_preview = this.preview;
                 this.current_variant = this.variant_radios.currentVariant.id;
-                if (!old_preview.variants.includes(this.current_variant)) {
-                    this.repaint(this.data);
-                }
             });
         }
-
-        this.repaint({});
     }
 
     get current_variant() {
@@ -493,10 +503,10 @@ class SpotiesProductPreviewImage extends SpotiesElement {
         return this.preview.src;
     }
 
-    repaint(detail) {
+    getPreviewImage() {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext("2d");
-        this.imgUrlToBase64(this.template_image)
+        return this.imgUrlToBase64(this.template_image)
             .then((template_src) => this.loadImage(template_src))
             .then((template_image) => {
                 canvas.width = template_image.naturalWidth;
@@ -507,21 +517,21 @@ class SpotiesProductPreviewImage extends SpotiesElement {
 
                 // Convert to Image
                 this.settings[this.preview_id].forEach((element) => {
-                    if (element.type === 'cover' && typeof detail[`spoties-cover`] !== 'object') {
+                    if (element.type === 'cover' && typeof this.data[`spoties-cover`] !== 'object') {
                         const key = 'spoties-cover';
-                        const src = detail[key] || this.defaults['cover'];
+                        const src = this.data[key] || this.defaults['cover'];
                         const promise = this.loadImage(src).then((image) => {
-                            detail[key] = image;
+                            this.data[key] = image;
                         });
                         promises.push(promise);
                     }
-                    else if (element.type === 'code' && typeof detail[`spoties-${element.type}`] !== 'object') {
-                        const src = detail['spotify-uri'] || this.defaults['spotify_uri'];
+                    else if (element.type === 'code' && typeof this.data[`spoties-${element.type}`] !== 'object') {
+                        const src = this.data['spotify-uri'] || this.defaults['spotify_uri'];
                         const color = element.color || 'black';
                         const promise = this.getSpotifyCode(src, true, true, color).then((src) => {
                             return this.loadImage(src);
                         }).then((image) => {
-                            detail['spoties-code'] = image;
+                            this.data['spoties-code'] = image;
                         });
                         promises.push(promise);
                     }
@@ -547,7 +557,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                     switch (element.type) {
                         case 'cover':
                         case 'code':
-                            const image = detail[key];
+                            const image = this.data[key];
                             if (element.rotate) {
                                 const positionX = element.position[0];
                                 const positionY = element.position[1];
@@ -565,7 +575,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                         case 'record':
                         case 'artist':
                         case 'text':
-                            const text = detail[key] || this.defaults[element.type] || element.default;
+                            const text = this.data[key] || this.defaults[element.type] || element.default;
                             ctx.font = `${element.font?.weight || 'normal'} ${element.font?.size || 50}px ${element.font?.name || 'arial'}`;
                             ctx.textAlign = element.align || "center";
                             ctx.fillStyle = element.color || "black";
@@ -573,10 +583,13 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                             break;
                     }
                 });
-                const data_url = canvas.toDataURL()
-                this.preview_image.src = data_url;
-            })
-            .catch((err) => console.log('Error while rendering preview image', err));
+                return canvas.toDataURL()
+            });
+    }
+
+    updatePreviewImage(image_src) {
+        console.log('updated');
+        this.preview_image.src = image_src;
     }
 }
 
