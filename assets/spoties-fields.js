@@ -66,8 +66,9 @@ class SpotiesElement extends HTMLElement {
     }
 
     async getSpotifyCode(spotify_uri, remove_background = false, remove_padding = false, color = 'black', background_color = 'ffffff', width = 1080) {
+        const get_color = color == 'white' ? 'white' : 'black';
         const bg_color = remove_background ? (color == 'black' ? '000001' : 'fffffe') : background_color;
-        const code_url = `https://scannables.scdn.co/uri/plain/png/${bg_color}/${color}/${width}/${spotify_uri}`;
+        const code_url = `https://scannables.scdn.co/uri/plain/png/${bg_color}/${get_color}/${width}/${spotify_uri}`;
         let src = await this.imgUrlToBase64(code_url);
         if (remove_padding) {
             const image = await this.loadImage(src);
@@ -82,6 +83,11 @@ class SpotiesElement extends HTMLElement {
         if (remove_background) {
             const image = await this.loadImage(src);
             src = this.replaceColorInImage(image, this.hexToRgb(`#${bg_color}`), { r: 0, g: 0, b: 0, a: 0 });
+        }
+        if (color != 'white' && color != 'black') {
+            const image = await this.loadImage(src);
+            const remove_color = this.hexToRgb(bg_color === 'white' ? '#ffffff' : '#000000');
+            src = this.replaceColorInImage(image, remove_color, this.hexToRgb(`#${color}`));
         }
         return src;
     };
@@ -588,7 +594,6 @@ class SpotiesProductPreviewImage extends SpotiesElement {
     }
 
     updatePreviewImage(image_src) {
-        console.log('updated');
         this.preview_image.src = image_src;
     }
 }
