@@ -465,7 +465,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
         this.modal.addEventListener('open', () => {
             const new_print = {
                 template: this.template_image,
-                data: {...this.data}
+                data: { ...this.data }
             }
 
             if (JSON.stringify(this.last_print) !== JSON.stringify(new_print)) {
@@ -603,6 +603,7 @@ class SpotiesFields extends SpotiesElement {
 
         this.search_field = this.querySelector('spoties-search-field');
         this.cover_field = this.querySelector('spoties-cover-field');
+        this.preview = document.querySelector('spoties-preview');
 
         this.data = {}
 
@@ -623,13 +624,26 @@ class SpotiesFields extends SpotiesElement {
     }
 
     addToFormData(formData) {
-        if (this.search_field && this.search_field.required) {
-            formData.append('properties[_Spotify URI]', this.search_field.spotify_uri);
-            formData.append('properties[Spotify Code]', this.search_field.spotify_code, 'spotify_code.png');
-        }
-        if (this.cover_field) {
-            formData.append('properties[Cover Image]', this.cover_field.cover_image, 'cover_image.png');
-        }
+        return new Promise((resolve, reject) => {
+            if (this.search_field && this.search_field.required) {
+                formData.append('properties[_Spotify URI]', this.search_field.spotify_uri);
+                formData.append('properties[Spotify Code]', this.search_field.spotify_code, 'spotify_code.png');
+            }
+            if (this.cover_field) {
+                formData.append('properties[Cover Image]', this.cover_field.cover_image, 'cover_image.png');
+            }
+            if (this.preview) {
+                this.preview.getPreviewImage()
+                    .then((image_src) => this.base64toBlob(image_src.split(',')[1], 'images/png'))
+                    .then((blob) => {
+                        formData.append('properties[_Preview Image]', blob, 'preview_image.png');
+                        resolve();
+                    }).
+                    catch((err) => reject(err));
+            } else {
+                resolve();
+            }
+        });
     }
 }
 

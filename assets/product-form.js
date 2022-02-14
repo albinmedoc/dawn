@@ -36,7 +36,7 @@ if (!customElements.get('product-form')) {
 
       const spoties_fields_valid = this.spoties_fields.validate();
 
-      if(!spoties_fields_valid) {
+      if (!spoties_fields_valid) {
         this.hideLoader();
         return;
       }
@@ -48,10 +48,11 @@ if (!customElements.get('product-form')) {
       const formData = new FormData(this.form);
       formData.append('sections', this.cartNotification.getSectionsToRender().map((section) => section.id));
       formData.append('sections_url', window.location.pathname);
-      this.spoties_fields.addToFormData(formData);
-      config.body = formData;
 
-      fetch(`${routes.cart_add_url}`, config)
+      this.spoties_fields.addToFormData(formData).then(() => {
+        config.body = formData;
+        return fetch(`${routes.cart_add_url}`, config);
+      })
         .then((response) => response.json())
         .then((response) => {
           if (response.status) {
