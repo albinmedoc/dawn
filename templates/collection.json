@@ -24,6 +24,7 @@
     },
     "1641976019966361e7": {
       "type": "image-banner",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Cover_ecd7f844-fae0-4cc6-b31c-e7860ca431da.jpg",
         "image_overlay_opacity": 0,
