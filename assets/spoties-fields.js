@@ -226,7 +226,7 @@ class SpotiesSearch extends SpotiesElement {
 
             const result = this.createSearchResult(image, name, artists);
             result.addEventListener('click', () => {
-                this.getSpotifyCode(uri, true)
+                this.getSpotifyCode(uri)
                     .then((src) => {
                         this.spotify_code_elem.src = src;
                         this.spotify_uri = uri;
