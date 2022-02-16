@@ -65,9 +65,35 @@ class SpotiesElement extends HTMLElement {
         });
     }
 
+    incrementColor(color, step) {
+        var colorToInt = parseInt(color.substr(1), 16);
+        colorToInt += step;
+        var ncolor = colorToInt.toString(16);
+        ncolor = '#' + (new Array(7 - ncolor.length).join(0)) + ncolor;
+        if (/^#[0-9a-f]{6}$/i.test(ncolor)) {
+            return ncolor;
+        }
+        return color;
+    };
+
     async getSpotifyCode(spotify_uri, remove_background = false, remove_padding = false, color = 'black', background_color = '#ffffff', width = 1080) {
         const get_color = color == 'white' ? 'white' : 'black';
-        const bg_color = remove_background ? (color == 'black' ? '#000001' : '#fffffe') : background_color;
+        let bg_color = background_color;
+        if(remove_background){
+            switch(color){
+                case 'black':
+                case '#000000':
+                    bg_color = '#000001';
+                    break;
+                case 'white':
+                case '#ffffff':
+                    bg_color = '#fffffe';
+                    break;
+                default:
+                    bg_color = this.incrementColor(color, 1);
+                    break;
+            }
+        }
         const code_url = `https://scannables.scdn.co/uri/plain/png/${bg_color.replace('#', '')}/${get_color}/${width}/${spotify_uri}`;
         let src = await this.imgUrlToBase64(code_url);
         if (remove_padding) {
@@ -538,21 +564,21 @@ class SpotiesProductPreviewImage extends SpotiesElement {
 
                 // Convert to Image
                 this.settings[this.preview_id].forEach((element) => {
-                    if (element.type === 'cover' && typeof this.data[`spoties-cover`] !== 'object') {
-                        const key = 'spoties-cover';
+                    if (element.type === 'cover' && typeof this.data[`spoties-cover${this.preview_id}`] !== 'object') {
+                        const key = `spoties-cover${this.preview_id}`;
                         const src = this.data[key] || this.defaults['cover'];
                         const promise = this.loadImage(src).then((image) => {
                             this.data[key] = image;
                         });
                         promises.push(promise);
                     }
-                    else if (element.type === 'code' && typeof this.data[`spoties-${element.type}`] !== 'object') {
+                    else if (element.type === 'code' && typeof this.data[`spoties-code-${this.preview_id}`] !== 'object') {
                         const src = this.data['spotify-uri'] || this.defaults['spotify_uri'];
                         const color = element.color || 'black';
                         const promise = this.getSpotifyCode(src, true, true, color).then((src) => {
                             return this.loadImage(src);
                         }).then((image) => {
-                            this.data['spoties-code'] = image;
+                            this.data[`spoties-code-${this.preview_id}`] = image;
                         });
                         promises.push(promise);
                     }
@@ -578,7 +604,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                     switch (element.type) {
                         case 'cover':
                         case 'code':
-                            const image = this.data[key];
+                            const image = this.data[`${key}-${this.preview_id}`];
                             if (element.rotate) {
                                 const positionX = element.position[0];
                                 const positionY = element.position[1];
