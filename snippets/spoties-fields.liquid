@@ -24,15 +24,7 @@
         {%- when 'cover-image' -%}
             {% render 'spoties-cover-field' product: product %}
         {%- when 'record-name' -%}
-            <spoties-record-name-field
-                {% if option.minlength %}
-                    minlength="{{ option.minlength }}"
-                {% endif %}
-                {% if option.maxlength %}
-                    maxlength="{{ option.maxlength }}"
-                {% endif %}
-                required
-            >
+            <spoties-record-name-field>
                 <div class="spoties__option">
                     <label for="spoties-record">Låtnamn</label>
                     <input
@@ -40,6 +32,12 @@
                         id="spoties-record"
                         name="properties[Record name]"
                         form="{{ form_id }}"
+                        {% if option.minlength %}
+                            minlength="{{ option.minlength }}"
+                        {% endif %}
+                        {% if option.maxlength %}
+                            maxlength="{{ option.maxlength }}"
+                        {% endif %}
                         required
                     >
                     <spoties-option-errors></spoties-option-errors>
@@ -47,6 +45,12 @@
             </spoties-record-name-field>
         {%- when 'artist-name' -%}
             <spoties-artist-field
+                {% if option.minlength %}
+                    minlength="{{ option.minlength }}"
+                {% endif %}
+                {% if option.maxlength %}
+                    maxlength="{{ option.maxlength }}"
+                {% endif %}
                 {% if option.minlength %}
                     minlength="{{ option.minlength }}"
                 {% endif %}
@@ -67,17 +71,7 @@
                 </div>
             </spoties-artist-field>
         {%- when 'text' -%}
-            <spoties-text-field
-                {% if option.minlength %}
-                    minlength="{{ option.minlength }}"
-                {% endif %}
-                {% if option.maxlength %}
-                    maxlength="{{ option.maxlength }}"
-                {% endif %}
-                {% if option.required %}
-                    required
-                {% endif %}
-            >
+            <spoties-text-field>
                 <div class="spoties__option">
                     <label for="spoties-{{ option.id }}">{{ option.label }}</label>
                     <input
@@ -85,6 +79,15 @@
                         id="spoties-{{ option.id }}"
                         name="properties[{{ option.name }}]"
                         form="{{ form_id }}"
+                        {% if option.minlength %}
+                            minlength="{{ option.minlength }}"
+                        {% endif %}
+                        {% if option.maxlength %}
+                            maxlength="{{ option.maxlength }}"
+                        {% endif %}
+                        {% if option.required %}
+                            required
+                        {% endif %}
                     >
                     <spoties-option-errors></spoties-option-errors>
                 </div>

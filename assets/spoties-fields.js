@@ -358,22 +358,36 @@ class SpotiesTextField extends SpotiesElement {
         this.dispatchEvent(new CustomEvent('update', { detail }));
     }
 
+    get minLength() {
+        if (this.input.hasAttribute('minlength')) {
+            return parseInt(this.input.getAttribute('minlength'));
+        }
+        return null;
+    }
+
+    get maxLength() {
+        if (this.input.hasAttribute('maxlength')) {
+            return parseInt(this.input.getAttribute('maxlength'));
+        }
+        return null;
+    }
+
     validate() {
         this.errors.clear();
         const length = this.input.value.length;
 
-        const required_valid = this.hasAttribute('required') ? this.input.value.trim() !== '' : true;
-        const min_valid = this.hasAttribute('minlength') ? length >= parseInt(this.getAttribute('minlength')) : true;
-        const max_valid = this.hasAttribute('maxlength') ? length <= parseInt(this.getAttribute('maxlength')) : true;
+        const required_valid = this.input.hasAttribute('required') ? this.input.value.trim() !== '' : true;
+        const min_valid = this.minLength ? length >= this.minLength : true;
+        const max_valid = this.maxLength ? length <= this.maxLength : true;
 
         if (!required_valid && min_valid) {
             this.errors.add('Var vänlig och ange')
         }
         if (!min_valid) {
-            this.errors.add(`Var vänlig och ange minst ${this.getAttribute('minlength')} tecken`)
+            this.errors.add(`Var vänlig och ange minst ${this.input.getAttribute('minlength')} tecken`)
         }
         if (!max_valid) {
-            this.errors.add(`Var vänlig och ange max ${this.getAttribute('maxlength')} tecken`)
+            this.errors.add(`Var vänlig och ange max ${this.input.getAttribute('maxlength')} tecken`)
         }
         return required_valid && min_valid && max_valid;
     }
@@ -391,7 +405,8 @@ class SpotiesRecordField extends SpotiesTextField {
         this.update_value = 'record';
 
         this.spoties_fields.addEventListener('spotiesSelected', (event) => {
-            this.input.value = event.detail[this.update_value];
+            const value = event.detail[this.update_value];
+            this.input.value = value.substring(0, this.maxLength || value.length);
             this.onChange();
         });
     }
