@@ -26,6 +26,7 @@
         },
         "95221072-920a-484f-855d-28a6d539f49c": {
           "type": "spoties_preview",
+          "disabled": true,
           "settings": {
             "record_name": "Låtnamn",
             "artist_name": "Artistnamn",
