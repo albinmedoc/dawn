@@ -79,8 +79,8 @@ class SpotiesElement extends HTMLElement {
     async getSpotifyCode(spotify_uri, remove_background = false, remove_padding = false, color = 'black', background_color = '#ffffff', width = 1080) {
         const get_color = color == 'white' ? 'white' : 'black';
         let bg_color = background_color;
-        if(remove_background){
-            switch(color){
+        if (remove_background) {
+            switch (color) {
                 case 'black':
                 case '#000000':
                     bg_color = '#000001';
@@ -502,17 +502,11 @@ class SpotiesProductPreviewImage extends SpotiesElement {
             spotify_uri: this.getAttribute('defaultSpotifyUri'),
         }
 
-        this.data = {};
         this.last_print = {};
-
-        this.spoties_fields.addEventListener('spotiesUpdate', (event) => {
-            this.data = Object.assign(this.data, event.detail);
-        });
-
         this.modal.addEventListener('open', () => {
             const new_print = {
                 template: this.template_image,
-                data: { ...this.data }
+                data: { ...this.spoties_fields.data }
             }
 
             if (JSON.stringify(this.last_print) !== JSON.stringify(new_print)) {
@@ -551,6 +545,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
     }
 
     getPreviewImage() {
+        const data = { ...this.spoties_fields.data };
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext("2d");
         return this.imgUrlToBase64(this.template_image)
@@ -564,21 +559,21 @@ class SpotiesProductPreviewImage extends SpotiesElement {
 
                 // Convert to Image
                 this.settings[this.preview_id].forEach((element) => {
-                    if (element.type === 'cover' && typeof this.data[`spoties-cover${this.preview_id}`] !== 'object') {
-                        const key = `spoties-cover${this.preview_id}`;
-                        const src = this.data[key] || this.defaults['cover'];
+                    if (element.type === 'cover' && typeof data[`spoties-cover`] !== 'object') {
+                        const key = `spoties-cover`;
+                        const src = data[key] || this.defaults['cover'];
                         const promise = this.loadImage(src).then((image) => {
-                            this.data[key] = image;
+                            data[key] = image;
                         });
                         promises.push(promise);
                     }
-                    else if (element.type === 'code' && typeof this.data[`spoties-code-${this.preview_id}`] !== 'object') {
-                        const src = this.data['spotify-uri'] || this.defaults['spotify_uri'];
+                    else if (element.type === 'code' && typeof data[`spoties-code-${this.preview_id}`] !== 'object') {
+                        const src = data['spotify-uri'] || this.defaults['spotify_uri'];
                         const color = element.color || 'black';
                         const promise = this.getSpotifyCode(src, true, true, color).then((src) => {
                             return this.loadImage(src);
                         }).then((image) => {
-                            this.data[`spoties-code-${this.preview_id}`] = image;
+                            data[`spoties-code-${this.preview_id}`] = image;
                         });
                         promises.push(promise);
                     }
@@ -604,7 +599,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                     switch (element.type) {
                         case 'cover':
                         case 'code':
-                            const image = this.data[`${key}-${this.preview_id}`];
+                            const image = data[`${key}${element.type === 'code' ? '-' + this.preview_id : ''}`];
                             if (element.rotate) {
                                 const positionX = element.position[0];
                                 const positionY = element.position[1];
@@ -622,7 +617,7 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                         case 'record':
                         case 'artist':
                         case 'text':
-                            const text = this.data[key] || this.defaults[element.type] || element.default;
+                            const text = data[key] || this.defaults[element.type] || element.default;
                             ctx.font = `${element.font?.weight || 'normal'} ${element.font?.size || 50}px ${element.font?.name || 'arial'}`;
                             ctx.textAlign = element.align || "center";
                             ctx.fillStyle = element.color || "black";
@@ -660,7 +655,12 @@ class SpotiesFields extends SpotiesElement {
         }
 
         const children = Array.from(this.children);
-        children.forEach((child) => { child.addEventListener('update', (event) => this.dispatchEvent(new CustomEvent('spotiesUpdate', { detail: event.detail }))) });
+        children.forEach((child) => {
+            child.addEventListener('update', (event) => {
+                this.data = Object.assign(this.data, event.detail);
+                this.dispatchEvent(new CustomEvent('spotiesUpdate', { detail: event.detail }))
+            });
+        });
     }
 
     validate() {
