@@ -64,6 +64,12 @@ spoties-option-errors > div:after {
     grid-gap: 1rem;
 }
 
+.spoties_search_url {
+    display: grid;
+    grid-template-columns: auto 100px;
+    grid-gap: 1rem;
+}
+
 #spoties-spotify-code {
     width: 100%;
     display: none;

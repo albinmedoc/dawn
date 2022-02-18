@@ -151,12 +151,16 @@ class SpotiesSearch extends SpotiesElement {
         super();
 
         this.required = this.hasAttribute('required');
-        this.search_field = this.querySelector('input[type="text"]');
+        this.search_field = this.querySelector('#spoties-search');
         this.search_type_field = this.querySelector('select');
         this.search_results_container = this.querySelector('.search__results__container');
         this.search_results = this.search_results_container.querySelector('div');
         this.load_more_btn = this.search_results_container.querySelector('button');
         this.spotify_code_elem = this.querySelector('#spoties-spotify-code');
+
+        this.search_url_field = this.querySelector('#spoties-search-url');
+        this.search_url_btn = this.querySelector('#spoties-search-url-btn');
+        this.search_toggle_method = this.querySelector('#spoties-search-toggle-method');
 
         this.errors = this.querySelector('spoties-option-errors');
 
@@ -173,6 +177,30 @@ class SpotiesSearch extends SpotiesElement {
         });
 
         this.load_more_btn.addEventListener('click', () => this.onLoadMore());
+
+        this.search_url_btn.addEventListener('click', () => {
+            this.errors.clear();
+            const url = this.search_url_field.value;
+            const regex = /((https?:\/\/)?(www.)?open.spotify\.com\/(playlist|album|track|artist)\/[a-zA-Z0-9]{22})(\?si=[a-zA-Z0-9]*)?/g;
+            if (!regex.test(url)) {
+                this.errors.add('Spotify-länken verkar inte vara giltig.')
+                return;
+            }
+            const type = url.match(/(playlist|album|track|artist)/g);
+            const id = url.match(/[a-zA-Z0-9]{22}/g);
+            const spotify_uri = `spotify:${type}:${id}`;
+            this.setSpotifyUri(spotify_uri);
+        });
+
+        this.search_toggle_method.addEventListener('click', () => {
+            const show_search = this.querySelector('.spoties_search_fields').style.display === 'none';
+            this.querySelector('.spoties_search_fields').style.display = show_search ? 'grid' : 'none';
+            this.querySelector('.spoties_search_url').style.display = show_search ? 'none' : 'grid';
+
+            const toggle_text = this.querySelector('#spoties-search-toggle-method');
+            toggle_text.children[0].style.display = show_search ? 'block' : 'none';
+            toggle_text.children[1].style.display = show_search ? 'none' : 'block';
+        });
     }
 
     get spotify_code() {
@@ -189,10 +217,6 @@ class SpotiesSearch extends SpotiesElement {
             }
         }
         return valid;
-    }
-
-    removeErrors() {
-        this.errors.clear();
     }
 
     clearResults() {
@@ -252,26 +276,14 @@ class SpotiesSearch extends SpotiesElement {
 
             const result = this.createSearchResult(image, name, artists);
             result.addEventListener('click', () => {
-                this.getSpotifyCode(uri)
-                    .then((src) => {
-                        this.spotify_code_elem.src = src;
-                        this.spotify_uri = uri;
-                        this.spotify_code_elem.style.display = "block";
-                        this.dispatchEvent(new CustomEvent('update', {
-                            detail: {
-                                'spoties-code': this.spotify_code_elem.src,
-                                'spotify-uri': uri,
-                            }
-                        }));
-                    })
+                this.setSpotifyUri(uri)
                     .finally(() => {
                         this.search_results_container.style.display = "none";
                         this.dispatchEvent(new CustomEvent('resClick', {
                             detail: {
                                 record: name,
                                 artists,
-                                image,
-                                uri
+                                image
                             }
                         }));
                     });
@@ -279,6 +291,21 @@ class SpotiesSearch extends SpotiesElement {
             this.search_results.append(result);
             this.search_results_container.style.display = "block";
         });
+    }
+
+    setSpotifyUri(uri) {
+        return this.getSpotifyCode(uri)
+            .then((src) => {
+                this.spotify_code_elem.src = src;
+                this.spotify_uri = uri;
+                this.spotify_code_elem.style.display = "block";
+                this.dispatchEvent(new CustomEvent('update', {
+                    detail: {
+                        'spoties-code': src,
+                        'spotify-uri': uri,
+                    }
+                }));
+            });
     }
 
     createSearchResult(image, name, artists) {

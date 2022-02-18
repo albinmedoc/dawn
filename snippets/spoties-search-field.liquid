@@ -18,7 +18,7 @@
         <label for="spoties-search">Sök</label>
         <div class="spoties_search_fields">
             <select>
-                <option value="track" selected="">Låt</option>
+                <option value="track" selected>Låt</option>
                 <option value="album">Album</option>
             </select>
             <input
@@ -27,14 +27,20 @@
                 placeholder="Sök..."
             >
         </div>
+        <div class="spoties_search_url" style="display:none;">
+            <input
+                type="text"
+                id="spoties-search-url"
+                placeholder="Klistra in länk"
+            >
+            <input
+                type="button"
+                id="spoties-search-url-btn"
+                value="Använd"
+            >
+        </div>
+        <p style="margin: 0; text-align: center;">eller <a id="spoties-search-toggle-method" class="link" role="button"><span>klistra in en länk</span><span style="display:none;">sök efter låt & album</span></a></p>
         <spoties-option-errors></spoties-option-errors>
-        <p>
-            <i>
-                Powered by <img src="{{ 'spotify_logo.png' | asset_url }}" alt="Spotify logo" height="20" width="66" loading="lazy">
-                <br>
-                Hittar du inte låten eller albumet du söker? <a href="#ShopifyChat">Kontakta oss</a> så hjälper vi dig.
-            </i>
-        </p>
         <img id="spoties-spotify-code" loading="lazy" alt="Spotify code">
         <div class="search__results__container">
             <div></div>
