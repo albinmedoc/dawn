@@ -38,6 +38,12 @@
                         {% if option.maxlength %}
                             maxlength="{{ option.maxlength }}"
                         {% endif %}
+                        {% if option.pattern %}
+                            pattern="{{ option.pattern }}"
+                        {% endif %}
+                        {% if option.patternTitle %}
+                            title="{{ option.patternTitle }}"
+                        {% endif %}
                         required
                     >
                     <spoties-option-errors></spoties-option-errors>
@@ -56,6 +62,12 @@
                 {% endif %}
                 {% if option.maxlength %}
                     maxlength="{{ option.maxlength }}"
+                {% endif %}
+                {% if option.pattern %}
+                    pattern="{{ option.pattern }}"
+                {% endif %}
+                {% if option.patternTitle %}
+                    title="{{ option.patternTitle }}"
                 {% endif %}
                 required
             >
@@ -84,6 +96,12 @@
                         {% endif %}
                         {% if option.maxlength %}
                             maxlength="{{ option.maxlength }}"
+                        {% endif %}
+                        {% if option.pattern %}
+                            pattern="{{ option.pattern }}"
+                        {% endif %}
+                        {% if option.patternTitle %}
+                            title="{{ option.patternTitle }}"
                         {% endif %}
                         {% if option.required %}
                             required
