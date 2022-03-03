@@ -46,6 +46,13 @@
             "show_dynamic_checkout": false
           }
         },
+        "bb332460-81eb-4e65-a610-9e40062b24b5": {
+          "type": "shopify:\/\/apps\/eta-estimated-delivery-date\/blocks\/app-embed\/4a571afa-b01b-4db0-8dd8-6068aba2ef90",
+          "disabled": true,
+          "settings": {
+            "heading": "ETA"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -77,6 +84,7 @@
         "95221072-920a-484f-855d-28a6d539f49c",
         "60b77b3e-8ba4-4de6-88d9-afe9dd98c02e",
         "buy_buttons",
+        "bb332460-81eb-4e65-a610-9e40062b24b5",
         "description",
         "d6f9068e-8cb9-4030-9f68-415e1652e597",
         "38ec5804-3f29-4ae0-80c5-f22b177f7de8"
