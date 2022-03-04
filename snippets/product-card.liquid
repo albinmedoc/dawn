@@ -41,7 +41,7 @@
       -%}
       {% if variant_colors != "" %}
           <div class="color_variants">
-          {% assign colors = variant_colors | split: '#' %}
+          {% assign colors = variant_colors | split: '#' | uniq %}
           {% for color in colors %}
             {% if color != "" %}
               <span class="dot" style="background-color: {{ color | prepend: '#' }};"></span>
