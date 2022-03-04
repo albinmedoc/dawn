@@ -2,13 +2,27 @@
   {%- for item in cart.items -%}
     <div id="cart-notification-product-{{ item.id }}" class="cart-item">
       {% if item.image %}
+        {% liquid
+          for property in item.properties
+            if property.first == '_Preview Image'
+              assign preview_image = property.last
+            endif
+          endfor
+        %}
+        {% comment %}theme-check-disable RemoteAsset{% endcomment %}
         <img class="cart-notification-product__image"
-          src="{{ item.image | image_url: width: 140 }}"
           alt="{{ item.image.alt | escape }}"
           width="70"
-          height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
           loading="lazy"
+          {%- if preview_image -%}
+            src="{{ preview_image }}"
+            height="auto"
+          {%- else -%}
+          src="{{ item.image | image_url: width: 140 }}"
+          height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
+          {% endif %}
         >
+          {% comment %}theme-check-enable RemoteAsset{% endcomment %}
       {% endif %}
       <div>
         <h3 class="cart-notification-product__name h4">{{ item.product.title | escape }}</h3>
