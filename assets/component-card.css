@@ -179,6 +179,19 @@
   color: rgb(var(--color-foreground));
 }
 
+.card-information__wrapper > .color_variants {
+  display: inline-flex;
+}
+
+.card-information__wrapper > .color_variants > span {
+  height: 14px;
+  width: 14px;
+  border:1px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 7px;
+}
+
 .card-information__wrapper > .rating {
   margin-top: 0.4rem;
 }
