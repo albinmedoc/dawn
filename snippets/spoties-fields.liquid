@@ -44,7 +44,9 @@
                         {% if option.patternTitle %}
                             title="{{ option.patternTitle }}"
                         {% endif %}
-                        required
+                        {% if option.required %}
+                            required
+                        {% endif %}
                     >
                     <spoties-option-errors></spoties-option-errors>
                 </div>
@@ -69,7 +71,9 @@
                 {% if option.patternTitle %}
                     title="{{ option.patternTitle }}"
                 {% endif %}
-                required
+                {% if option.required %}
+                    required
+                {% endif %}
             >
                 <div class="spoties__option">
                     <label for="spoties-artist">Artistnamn</label>
