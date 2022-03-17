@@ -377,6 +377,7 @@ class SpotiesCoverImage extends SpotiesElement {
                 viewMode: 1,
             });
         });
+        this.cover_upload_field.value = '';
     }
 
     onSave() {
