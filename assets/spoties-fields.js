@@ -336,10 +336,15 @@ class SpotiesCoverImage extends SpotiesElement {
         this.cover_data = null;
         this.cropper = null;
 
+        this.manual_value = false;
+
         this.spoties_fields.addEventListener('spotiesSelected', (event) => {
-            this.imgUrlToBase64(event.detail.image).then((image) => {
-                this.setCoverImage(image);
-            });
+            if(!this.cover_data || !this.manual_value) {
+                this.imgUrlToBase64(event.detail.image).then((image) => {
+                    this.setCoverImage(image);
+                    this.manual_value = false;
+                });
+            }
         });
 
         this.cover_upload_field.addEventListener('change', (event) => { this.uploadFile(event.target.files[0]) });
@@ -380,6 +385,7 @@ class SpotiesCoverImage extends SpotiesElement {
             .toDataURL('image/jpeg');
         this.cropper.destroy();
         this.setCoverImage(image);
+        this.manual_value = true;
         this.modal.hide();
     }
 
@@ -456,12 +462,21 @@ class SpotiesRecordField extends SpotiesTextField {
 
         this.spoties_fields = this.closest('spoties-fields');
         this.update_value = 'record';
+        this.manual_value = false;
 
         this.spoties_fields.addEventListener('spotiesSelected', (event) => {
-            const value = event.detail[this.update_value];
-            this.input.value = value.substring(0, this.maxLength || value.length);
-            this.onChange();
+            if(!this.manual_value || !this.input.value) {
+                const value = event.detail[this.update_value];
+                this.input.value = value.substring(0, this.maxLength || value.length);
+                this.onChange();
+                this.manual_value = false;
+            }
         });
+    }
+
+    onChange() {
+        super.onChange();
+        this.manual_value = true;
     }
 }
 
