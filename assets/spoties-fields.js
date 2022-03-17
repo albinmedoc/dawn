@@ -190,6 +190,7 @@ class SpotiesSearch extends SpotiesElement {
             const id = url.match(/[a-zA-Z0-9]{22}/g);
             const spotify_uri = `spotify:${type}:${id}`;
             this.setSpotifyUri(spotify_uri);
+            this.search_url_field.value = '';
         });
 
         this.search_toggle_method.addEventListener('click', () => {
@@ -286,6 +287,7 @@ class SpotiesSearch extends SpotiesElement {
                                 image
                             }
                         }));
+                        this.search_field.value = '';
                     });
             });
             this.search_results.append(result);
