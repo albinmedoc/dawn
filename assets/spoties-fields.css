@@ -143,8 +143,52 @@ spoties-cover-field > .spoties__option > div > label, spoties-preview > .spoties
     margin-right: 1rem;
 }
 
-spoties-cover-field > .spoties__option img {
+spoties-cover-field .cover-image-container {
+    position: relative;
+    height: 200px;
+}
+
+spoties-cover-field  modal-opener {
+    height: 100%;
+    cursor: pointer;
+}
+
+spoties-cover-field modal-opener img {
+    height: 100%;
+}
+
+spoties-cover-field modal-opener svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
     height: 50px;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+spoties-cover-field modal-opener svg:hover {
+    width: 65px;
+    height: 65px;
+}
+
+spoties-cover-field modal-opener svg > * {
+    fill: #fff;
+}
+
+spoties-cover-field .cover-image-container > button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+spoties-cover-field .cover-image-container > button > svg {
+    width: 18px;
+    height: 18px;
 }
 
 #SpotiesModal-Preview .product-popup-modal__content, #SpotiesModal-Cover-Edit .product-popup-modal__content, #SpotiesModal-Cover-Preview .product-popup-modal__content {

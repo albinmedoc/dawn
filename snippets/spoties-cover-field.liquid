@@ -18,9 +18,15 @@
         <label for="spoties-cover-upload">Omslagsbild</label>
         <div>
             <label for="spoties-cover-upload" role="button">Välj bild</label>
-            <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#SpotiesModal-Cover-Preview">
-                <img loading="lazy" role="button" aria-haspopup="dialog">
-            </modal-opener>
+            <div class="cover-image-container" style="display: none;">
+                <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#SpotiesModal-Cover-Preview">
+                    <img loading="lazy" aria-haspopup="dialog">
+                    <span role="button">
+                        {% render 'icon-zoom' %}
+                    </span>
+                </modal-opener>
+                <button id="remove-cover" title="Ta bort bild">{% render 'icon-close' %}</button>
+            </div>
         </div>
         <spoties-option-errors></spoties-option-errors>
     </div>

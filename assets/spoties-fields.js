@@ -327,11 +327,14 @@ class SpotiesCoverImage extends SpotiesElement {
 
         this.spoties_fields = this.closest('spoties-fields');
         this.cover_upload_field = this.querySelector('input[type="file"]');
-        this.cover_image_elem = this.querySelector('.spoties__option img');
+        this.cover_image_container = this.querySelector('.cover-image-container');
+        this.cover_image_elem = this.cover_image_container.querySelector('img');
 
         this.modal = this.querySelector('#SpotiesModal-Cover-Edit');
         this.modal_image = this.modal.querySelector('img');
         this.modal_save = this.modal.querySelector('button');
+
+        this.remove_cover_btn = this.querySelector('#remove-cover');
 
         this.errors = this.querySelector('spoties-option-errors');
 
@@ -347,6 +350,13 @@ class SpotiesCoverImage extends SpotiesElement {
                     this.manual_value = false;
                 });
             }
+        });
+
+        this.remove_cover_btn.addEventListener('click', (event) => {
+            this.cover_image_elem.setAttribute('src', '');
+            this.cover_data = null;
+            this.dispatchEvent(new CustomEvent('update', { detail: { 'spoties-cover': null } }));
+            this.cover_image_container.style.display = "none";
         });
 
         this.cover_upload_field.addEventListener('change', (event) => { this.uploadFile(event.target.files[0]) });
@@ -395,7 +405,7 @@ class SpotiesCoverImage extends SpotiesElement {
     setCoverImage(image) {
         this.cover_data = image;
         this.cover_image_elem.src = image;
-        this.cover_image_elem.style.display = "block";
+        this.cover_image_container.style.display = "block";
         this.querySelector('#SpotiesModal-Cover-Preview img').src = image;
         this.dispatchEvent(new CustomEvent('update', { detail: { 'spoties-cover': image } }));
     }
@@ -645,6 +655,8 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                         case 'cover':
                         case 'code':
                             const image = data[`${key}${element.type === 'code' ? '-' + this.preview_id : ''}`];
+                            if(!image)
+                                break;
                             if (element.rotate) {
                                 const positionX = element.position[0];
                                 const positionY = element.position[1];
