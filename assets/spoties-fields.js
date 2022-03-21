@@ -675,6 +675,8 @@ class SpotiesProductPreviewImage extends SpotiesElement {
                         case 'artist':
                         case 'text':
                             const text = data[key] || this.defaults[element.type] || element.default;
+                            if(!text)
+                                break;
                             ctx.font = `${element.font?.weight || 'normal'} ${element.font?.size || 50}px ${element.font?.name || 'arial'}`;
                             ctx.textAlign = element.align || "center";
                             ctx.fillStyle = element.color || "black";
