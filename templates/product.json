@@ -69,10 +69,9 @@
         },
         "38ec5804-3f29-4ae0-80c5-f22b177f7de8": {
           "type": "popup",
-          "disabled": true,
           "settings": {
-            "text": "Hur funkar Spotify-koden?",
-            "page": ""
+            "text": "Hur funkar det?",
+            "page": "hur-funkar-det"
           }
         }
       },
