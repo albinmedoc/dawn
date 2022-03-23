@@ -11,7 +11,7 @@ document.addEventListener('click', (e) => {
     e.preventDefault();
     const dummyFrame = document.getElementById('dummy-chat-button-iframe');
     if (dummyFrame) {
-      const dummyBtn = dummyBtn.contentWindow.document.getElementById('dummy-chat-button')
+      const dummyBtn = dummyFrame.contentWindow.document.getElementById('dummy-chat-button')
       dummyBtn.click();
       return;
     }
