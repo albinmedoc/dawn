@@ -9,7 +9,7 @@ function getFocusableElements(container) {
 document.addEventListener('click', (e) => {
   if (e.target.getAttribute('href') === "#ShopifyChat") {
     e.preventDefault();
-    const dummyBtn = document.getElementById('dummy-chat-button');
+    const dummyBtn = document.getElementById('dummy-chat-button-iframe');
     if (dummyBtn) {
       dummyBtn.click();
       return;
