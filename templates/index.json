@@ -33,6 +33,23 @@
         "show_rating": false
       }
     },
+    "16496248823291b1de": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Easter_banner.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "1640253729e53f5137": {
       "type": "featured-collection",
       "settings": {
@@ -208,6 +225,7 @@
   "order": [
     "featured_products",
     "1642191206952e24fc",
+    "16496248823291b1de",
     "1640253729e53f5137",
     "1640253781f9ef190e",
     "16402537844360004c",
