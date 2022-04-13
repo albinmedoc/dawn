@@ -99,7 +99,6 @@
     },
     "1649625059e8f750aa": {
       "type": "image-banner",
-      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Easter_banner.png",
         "image_overlay_opacity": 0,
