@@ -430,6 +430,10 @@ class SpotiesTextField extends SpotiesElement {
         this.dispatchEvent(new CustomEvent('update', { detail }));
     }
 
+    get pattern () {
+        return this.input.getAttribute('pattern');
+    }
+
     get minLength() {
         if (this.input.hasAttribute('minlength')) {
             return parseInt(this.input.getAttribute('minlength'));
@@ -452,6 +456,9 @@ class SpotiesTextField extends SpotiesElement {
         const min_valid = this.minLength ? length >= this.minLength : true;
         const max_valid = this.maxLength ? length <= this.maxLength : true;
 
+        const regex = this.pattern ? new RegExp(this.pattern) : null;
+        const regex_valid = regex ? regex.test(this.input.value) : true;
+
         if (!required_valid && min_valid) {
             this.errors.add('Var vänlig och ange')
         }
@@ -461,7 +468,12 @@ class SpotiesTextField extends SpotiesElement {
         if (!max_valid) {
             this.errors.add(`Var vänlig och ange max ${this.input.getAttribute('maxlength')} tecken`)
         }
-        return required_valid && min_valid && max_valid;
+        if (!regex_valid) {
+            this.errors.add('Fältet innehåller otillåtna tecken');
+        }
+
+        const valid = required_valid && min_valid && max_valid && regex_valid;
+        return valid;
     }
 }
 
