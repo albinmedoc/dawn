@@ -40,6 +40,9 @@
           "label": "Text",
           "info": "Used as foreground color on background colors."
         },
+        "color_anchor": {
+          "label": "Anchor"
+        },
         "colors_outline_button_labels": {
           "label": "Outline button",
           "info": "Also used for text links."

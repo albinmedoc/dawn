@@ -74,6 +74,12 @@
       },
       {
         "type": "color",
+        "id": "color_anchor",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.color_anchor.label"
+      },
+      {
+        "type": "color",
         "id": "colors_outline_button_labels",
         "default": "#121212",
         "label": "t:settings_schema.colors.settings.colors_outline_button_labels.label",
