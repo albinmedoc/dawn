@@ -17,13 +17,13 @@
         "show_rating": false
       }
     },
-    "1642191206952e24fc": {
+    "1640253729e53f5137": {
       "type": "featured-collection",
       "settings": {
-        "title": "Presenttips",
-        "collection": "presenttips",
+        "title": "Populära produkter",
+        "collection": "populara-produkter",
         "products_to_show": 4,
-        "show_view_all": true,
+        "show_view_all": false,
         "swipe_on_mobile": false,
         "image_ratio": "adapt",
         "show_secondary_image": false,
@@ -50,13 +50,55 @@
         "show_text_below": true
       }
     },
-    "1640253729e53f5137": {
+    "165091999511786a6d": {
+      "type": "image-with-text",
+      "blocks": {
+        "16509199950fe4f287-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "EN PERFEKT PRESENT",
+            "heading_size": "h1"
+          }
+        },
+        "16509199950fe4f287-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Söker du efter en present till studenten, julklapp eller födelsedag, och vill ge något nytt men som också är personligt? Då har du kommit helt rätt. Samtliga produkter är anpassningsbara så du kan ge en personlig present, oavsett om det är ett halsband, armband eller en sångplatta.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "a82a6c40-9706-4320-bc0c-9caaf1cb33b8": {
+          "type": "button",
+          "settings": {
+            "button_label": "Visa alla produkter",
+            "button_link": "shopify:\/\/collections\/alla-produkter"
+          }
+        }
+      },
+      "block_order": [
+        "16509199950fe4f287-0",
+        "16509199950fe4f287-1",
+        "a82a6c40-9706-4320-bc0c-9caaf1cb33b8"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/present.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left"
+      }
+    },
+    "1642191206952e24fc": {
       "type": "featured-collection",
       "settings": {
-        "title": "Populära produkter",
-        "collection": "populara-produkter",
+        "title": "Presenttips",
+        "collection": "presenttips",
         "products_to_show": 4,
-        "show_view_all": false,
+        "show_view_all": true,
         "swipe_on_mobile": false,
         "image_ratio": "adapt",
         "show_secondary_image": false,
@@ -239,9 +281,10 @@
   },
   "order": [
     "featured_products",
-    "1642191206952e24fc",
-    "16496248823291b1de",
     "1640253729e53f5137",
+    "16496248823291b1de",
+    "165091999511786a6d",
+    "1642191206952e24fc",
     "1640253781f9ef190e",
     "16402537844360004c",
     "1650488513478a501b",
