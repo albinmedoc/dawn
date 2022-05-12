@@ -194,12 +194,14 @@
     },
     "1650488513478a501b": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<h2 style=\"text-align:center\">\n<a href=\"https:\/\/www.instagram.com\/spoties.se\/\" target=\"_blank\">Följ oss på Instagram<\/a>\n<\/h2>"
       }
     },
     "1650488435376e3b4a": {
       "type": "instafeed",
+      "disabled": true,
       "settings": {
         "heading_font": "helvetica_n4",
         "heading_size": 20,
