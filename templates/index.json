@@ -17,6 +17,48 @@
         "show_rating": false
       }
     },
+    "1655564716f0e69c6e": {
+      "type": "image-with-text",
+      "blocks": {
+        "1655564716e5721e21-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Giveaway",
+            "heading_size": "h0"
+          }
+        },
+        "1655564716e5721e21-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>XXXTentacion gick bort för fyra år sedan, 18 Juni 2018. Jahseh Dwayne Ricardo Onfroy som han egentligen heter blev endast 20 år. <\/p><p><\/p><p>Just nu har du chans att vinna en tavla som hyllar XXXTentacion.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "1655564716e5721e21-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Var med i giveaway!",
+            "button_link": "https:\/\/www.instagram.com\/p\/Ce85m-hItCi\/"
+          }
+        }
+      },
+      "block_order": [
+        "1655564716e5721e21-0",
+        "1655564716e5721e21-1",
+        "1655564716e5721e21-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Giveaway_plaque_transparent.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left"
+      }
+    },
     "1640253729e53f5137": {
       "type": "featured-collection",
       "settings": {
@@ -283,6 +325,7 @@
   },
   "order": [
     "featured_products",
+    "1655564716f0e69c6e",
     "1640253729e53f5137",
     "16496248823291b1de",
     "165091999511786a6d",
