@@ -46,11 +46,10 @@
           },
           "253960da-7c56-45fd-baa5-6cb107921aac": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "Beställ innan 4\/12 för leverans till julafton (gäller utvalda produkter)",
               "color_scheme": "background-2",
-              "link": "shopify:\/\/pages\/hur-funkar-det"
+              "link": "shopify:\/\/collections\/julklappar"
             }
           }
         },
