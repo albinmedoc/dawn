@@ -37,16 +37,27 @@
           },
           "6b146f68-2c42-497c-afac-bf279d310af7": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Just nu söker vi samarbetspartners",
               "color_scheme": "background-1",
               "link": "shopify:\/\/pages\/samarbete"
             }
+          },
+          "253960da-7c56-45fd-baa5-6cb107921aac": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Beställ innan 4\/12 för leverans till julafton (gäller utvalda produkter)",
+              "color_scheme": "background-2",
+              "link": "shopify:\/\/pages\/hur-funkar-det"
+            }
           }
         },
         "block_order": [
           "858bda4b-ffef-442c-bc1e-8044ebaabc50",
-          "6b146f68-2c42-497c-afac-bf279d310af7"
+          "6b146f68-2c42-497c-afac-bf279d310af7",
+          "253960da-7c56-45fd-baa5-6cb107921aac"
         ],
         "settings": {
         }
