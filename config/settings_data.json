@@ -29,7 +29,6 @@
         "blocks": {
           "858bda4b-ffef-442c-bc1e-8044ebaabc50": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "Alltid fri frakt!",
               "color_scheme": "inverse",
@@ -56,6 +55,7 @@
           },
           "1d8ba96f-9a1e-47ab-896d-04917c7691ff": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Vår fabrik är tillfälligt stängd. Varor tillverkas först 1 februari.",
               "color_scheme": "inverse",
