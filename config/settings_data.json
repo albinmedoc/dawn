@@ -61,13 +61,23 @@
               "color_scheme": "inverse",
               "link": ""
             }
+          },
+          "0b4e5f15-6146-4123-9406-d25a7ffedbb3": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Hejsan",
+              "color_scheme": "background-2",
+              "link": ""
+            }
           }
         },
         "block_order": [
           "858bda4b-ffef-442c-bc1e-8044ebaabc50",
           "6b146f68-2c42-497c-afac-bf279d310af7",
           "253960da-7c56-45fd-baa5-6cb107921aac",
-          "1d8ba96f-9a1e-47ab-896d-04917c7691ff"
+          "1d8ba96f-9a1e-47ab-896d-04917c7691ff",
+          "0b4e5f15-6146-4123-9406-d25a7ffedbb3"
         ],
         "settings": {
         }
