@@ -456,7 +456,7 @@ class SpotiesTextField extends SpotiesElement {
         const min_valid = this.minLength ? length >= this.minLength : true;
         const max_valid = this.maxLength ? length <= this.maxLength : true;
 
-        const regex = this.pattern ? new RegExp(this.pattern) : null;
+        const regex = new RegExp(this.pattern ? this.pattern : "^[a-zåäöA-ZÅÄÖ0-9❤️!\"#€%&/()=?]*$");
         const regex_valid = regex ? regex.test(this.input.value) : true;
 
         if (!required_valid && min_valid) {
