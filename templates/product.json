@@ -47,7 +47,7 @@
           }
         },
         "bb332460-81eb-4e65-a610-9e40062b24b5": {
-          "type": "shopify:\/\/apps\/eta-estimated-delivery-date\/blocks\/app-embed\/4a571afa-b01b-4db0-8dd8-6068aba2ef90",
+          "type": "shopify:\/\/apps\/estimated-delivery-date-eta\/blocks\/app-embed\/4a571afa-b01b-4db0-8dd8-6068aba2ef90",
           "disabled": true,
           "settings": {
             "heading": "ETA"
