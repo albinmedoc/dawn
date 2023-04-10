@@ -183,6 +183,8 @@ class SpotiesSearch extends SpotiesElement {
             const url = this.search_url_field.value;
             const regex = /^(https?:\/\/)?(www\.)?open.spotify\.com\/(playlist|album|track|artist)\/([a-zA-Z0-9]{22})(\?[a-zA-Z]*=.*)?$/g;
             const url_parts = regex.exec(url);
+            console.log("regex valid", regex.test(url));
+            console.log("regex parts", url_parts);
             if (!regex.test(url) || !url_parts) {
                 this.errors.add('Spotify-länken verkar inte vara giltig.')
                 return;
