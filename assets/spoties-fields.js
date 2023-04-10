@@ -181,13 +181,15 @@ class SpotiesSearch extends SpotiesElement {
         this.search_url_btn.addEventListener('click', () => {
             this.errors.clear();
             const url = this.search_url_field.value;
-            const regex = /((https?:\/\/)?(www.)?open.spotify\.com\/(playlist|album|track|artist)\/[a-zA-Z0-9]{22})(\?si=[a-zA-Z0-9]*)?/g;
-            if (!regex.test(url)) {
+            const regex = /^(https?:\/\/)?(www\.)?open.spotify\.com\/(playlist|album|track|artist)\/([a-zA-Z0-9]{22})(\?[a-zA-Z]*=.*)?$/g;
+            const url_parts = regex.exec(url);
+            if (!regex.test(url) || !url_parts) {
                 this.errors.add('Spotify-länken verkar inte vara giltig.')
                 return;
             }
-            const type = url.match(/(playlist|album|track|artist)/g);
-            const id = url.match(/[a-zA-Z0-9]{22}/g);
+
+            const type = url_parts[3];
+            const id = url_parts[4];;
             const spotify_uri = `spotify:${type}:${id}`;
             this.setSpotifyUri(spotify_uri);
             this.search_url_field.value = '';
