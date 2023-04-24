@@ -143,6 +143,8 @@
         {% assign productTags = product_card_product.tags | join: ', ' %}
         {%- if productTags contains 'Snabb leverans' -%}
         	<span class="badge badge--top-right color-{{ settings.sale_badge_color_scheme }}">Snabbare leverans</span>
+        {%- elsif productTags contains 'Utgående' -%}
+          <span class="badge badge--top-right color-{{ settings.sale_badge_color_scheme }}">Utgående</span>
         {%- endif -%}
       </div>
 
