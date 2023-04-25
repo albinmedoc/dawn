@@ -17,6 +17,31 @@
         "show_rating": false
       }
     },
+    "2e259d30-39b8-4a78-a987-2f318365c0c9": {
+      "type": "featured-collection",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "title": "Utgående produkter",
+        "collection": "utgaende-produkter",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "swipe_on_mobile": true,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "833318a2-514a-4022-b019-1aadea0aab0f": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<hr style=\"height:2px;\">"
+      }
+    },
     "1655564716f0e69c6e": {
       "type": "image-with-text",
       "disabled": true,
@@ -326,6 +351,8 @@
   },
   "order": [
     "featured_products",
+    "2e259d30-39b8-4a78-a987-2f318365c0c9",
+    "833318a2-514a-4022-b019-1aadea0aab0f",
     "1655564716f0e69c6e",
     "1640253729e53f5137",
     "16496248823291b1de",
