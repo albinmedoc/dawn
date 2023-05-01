@@ -17,12 +17,6 @@
         "show_rating": false
       }
     },
-    "833318a2-514a-4022-b019-1aadea0aab0f": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<hr style=\"height:2px;\">"
-      }
-    },
     "1655564716f0e69c6e": {
       "type": "image-with-text",
       "disabled": true,
@@ -332,7 +326,6 @@
   },
   "order": [
     "featured_products",
-    "833318a2-514a-4022-b019-1aadea0aab0f",
     "1655564716f0e69c6e",
     "1640253729e53f5137",
     "16496248823291b1de",
