@@ -137,6 +137,7 @@
     },
     "1642191206952e24fc": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Presenttips",
         "collection": "presenttips",
