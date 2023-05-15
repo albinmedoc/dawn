@@ -44,40 +44,19 @@
               "link": "shopify:\/\/pages\/samarbete"
             }
           },
-          "253960da-7c56-45fd-baa5-6cb107921aac": {
+          "ed79a0e1-d6ff-43fc-ac7e-029ebdff0746": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
-              "text": "Beställ innan 4\/12 för leverans till julafton (gäller utvalda produkter)",
-              "color_scheme": "background-2",
-              "link": "shopify:\/\/collections\/julklappar"
-            }
-          },
-          "1d8ba96f-9a1e-47ab-896d-04917c7691ff": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "Vår fabrik är tillfälligt stängd. Varor tillverkas först 1 februari.",
-              "color_scheme": "inverse",
-              "link": ""
-            }
-          },
-          "0b4e5f15-6146-4123-9406-d25a7ffedbb3": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "Hejsan",
-              "color_scheme": "background-2",
-              "link": ""
+              "text": "Morsdag 15% rabatt | Använd rabattkoden MORSDAG",
+              "color_scheme": "background-1",
+              "link": "\/discount\/MORSDAG"
             }
           }
         },
         "block_order": [
           "858bda4b-ffef-442c-bc1e-8044ebaabc50",
           "6b146f68-2c42-497c-afac-bf279d310af7",
-          "253960da-7c56-45fd-baa5-6cb107921aac",
-          "1d8ba96f-9a1e-47ab-896d-04917c7691ff",
-          "0b4e5f15-6146-4123-9406-d25a7ffedbb3"
+          "ed79a0e1-d6ff-43fc-ac7e-029ebdff0746"
         ],
         "settings": {
         }
