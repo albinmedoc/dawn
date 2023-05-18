@@ -763,7 +763,7 @@ class SpotiesFields extends SpotiesElement {
                     .then((preview_blob) => formData.append('properties[_Preview Image]', preview_blob, 'preview_image.png'))
             );
         }
-        return Promise.all(this.dataPromises);
+        return Promise.all(dataPromises);
     }
 }
 
