@@ -29,6 +29,7 @@
         "blocks": {
           "858bda4b-ffef-442c-bc1e-8044ebaabc50": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Alltid fri frakt!",
               "color_scheme": "inverse",
@@ -48,7 +49,7 @@
             "type": "announcement",
             "settings": {
               "text": "Morsdag 15% rabatt | Använd rabattkoden MORSDAG",
-              "color_scheme": "background-1",
+              "color_scheme": "inverse",
               "link": "\/discount\/MORSDAG"
             }
           }
