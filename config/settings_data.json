@@ -48,7 +48,7 @@
           "6c5baa50-974e-43e1-b244-0864433f53af": {
             "type": "announcement",
             "settings": {
-              "text": "Morsdag 15% rabatt Beställ senast 24\/5 kl 12",
+              "text": "Beställ senast 24\/5 kl 12 för leverans till morsdag",
               "color_scheme": "inverse",
               "link": ""
             }
@@ -56,7 +56,7 @@
           "ed79a0e1-d6ff-43fc-ac7e-029ebdff0746": {
             "type": "announcement",
             "settings": {
-              "text": "Använd rabattkoden MORSDAG",
+              "text": "Använd rabattkoden MORSDAG för 15% rabatt",
               "color_scheme": "inverse",
               "link": "\/discount\/MORSDAG"
             }
@@ -64,7 +64,7 @@
           "4598739b-9775-4f87-8ab6-67de7fc79a50": {
             "type": "announcement",
             "settings": {
-              "text": "Snabb frakt på nyckelringar och armband | 1-3 arbetsdagar",
+              "text": "Snabb frakt på nyckelringar och armband | 1-3 arbetsdagar ✈",
               "color_scheme": "background-2",
               "link": ""
             }
