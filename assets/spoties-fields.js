@@ -744,14 +744,14 @@ class SpotiesFields extends SpotiesElement {
 
     addToFormData(formData) {
         if (this.cover_field) {
-            formData.append('properties[Cover Image]', this.cover_field.cover_image, 'cover_image.png');
+            formData.append('properties[Cover image]', this.cover_field.cover_image, 'cover_image.png');
         }
         const dataPromises = [];
         if (this.search_field && this.search_field.required) {
             dataPromises.push(
                 this.getSpotifyCode(this.search_field.spotify_uri, true, true, 'black')
                     .then((spotify_code) => this.base64toBlob(spotify_code.split(',')[1], 'images/png'))
-                    .then((spotify_code_blob) => formData.append('properties[Spotify Code]', spotify_code_blob, 'spotify_code.png'))
+                    .then((spotify_code_blob) => formData.append('properties[Spotify code]', spotify_code_blob, 'spotify_code.png'))
             );
             formData.append('properties[_Spotify URI]', this.search_field.spotify_uri);
         }
