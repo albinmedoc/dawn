@@ -45,14 +45,6 @@
               "link": "shopify:\/\/pages\/samarbete"
             }
           },
-          "ed79a0e1-d6ff-43fc-ac7e-029ebdff0746": {
-            "type": "announcement",
-            "settings": {
-              "text": "Använd rabattkoden MORSDAG för 30% rabatt",
-              "color_scheme": "inverse",
-              "link": "\/discount\/MORSDAG"
-            }
-          },
           "4598739b-9775-4f87-8ab6-67de7fc79a50": {
             "type": "announcement",
             "settings": {
@@ -65,7 +57,6 @@
         "block_order": [
           "858bda4b-ffef-442c-bc1e-8044ebaabc50",
           "6b146f68-2c42-497c-afac-bf279d310af7",
-          "ed79a0e1-d6ff-43fc-ac7e-029ebdff0746",
           "4598739b-9775-4f87-8ab6-67de7fc79a50"
         ],
         "settings": {
