@@ -114,6 +114,13 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "5344136030958832672": {
+        "type": "shopify:\/\/apps\/goat-cod-forms-upsell\/blocks\/cod_forms\/6fa02c66-eb29-4453-b60a-0b2c5929ce7a",
+        "disabled": false,
+        "settings": {
+          "debugging_popup_script": ""
+        }
       }
     }
   },
